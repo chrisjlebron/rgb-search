@@ -1,0 +1,14 @@
+# OSX
+.DS_STORE
+
+# node & package managers
+node_modules
+
+# caches
+.module-cache
+.sass-cache
+
+# logs
+logs
+*.log*
+npm-debug.log*
