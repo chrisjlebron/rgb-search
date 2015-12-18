@@ -2,7 +2,7 @@ import React from 'react';
 import ProductTable from './components/rgb-product-table';
 import SearchBar from './components/rgb-search-bar';
 
-import fruits from './fixtures/fruits.json'
+import getFruits from './fixtures/fruits.js'
 
 class FilterableSearch extends React.Component {
 
@@ -26,7 +26,7 @@ class FilterableSearch extends React.Component {
 
   render() {
 
-    const results = fruits;
+    const products = getFruits();
 
     return (
       <div>
@@ -36,7 +36,7 @@ class FilterableSearch extends React.Component {
           onUserInput={this.handleUserInput}
         />
         <ProductTable
-          results={results}
+          products={products}
           filterText={this.state.filterText}
           inUserAttrs={this.state.inUserAttrs}
         />
