@@ -1,324 +1,324 @@
-export function getFruits() {
+export default function getFruits() {
   return [
     {
       name: "apple",
-      stocked: true
+      userLikes: true
     },
     {
       name: "apricot",
-      stocked: false
+      userLikes: false
     },
     {
       name: "avocado",
-      stocked: false
+      userLikes: false
     },
     {
       name: "banana",
-      stocked: false
+      userLikes: false
     },
     {
       name: "bell pepper",
-      stocked: false
+      userLikes: false
     },
     {
       name: "bilberry",
-      stocked: false
+      userLikes: false
     },
     {
       name: "blackberry",
-      stocked: true
+      userLikes: true
     },
     {
       name: "blackcurrant",
-      stocked: false
+      userLikes: false
     },
     {
       name: "blood orange",
-      stocked: false
+      userLikes: false
     },
     {
       name: "blueberry",
-      stocked: false
+      userLikes: false
     },
     {
       name: "boysenberry",
-      stocked: true
+      userLikes: true
     },
     {
       name: "breadfruit",
-      stocked: false
+      userLikes: false
     },
     {
       name: "canary melon",
-      stocked: false
+      userLikes: false
     },
     {
       name: "cantaloupe",
-      stocked: false
+      userLikes: false
     },
     {
       name: "cherimoya",
-      stocked: false
+      userLikes: false
     },
     {
       name: "cherry",
-      stocked: true
+      userLikes: true
     },
     {
       name: "chili pepper",
-      stocked: false
+      userLikes: false
     },
     {
       name: "clementine",
-      stocked: false
+      userLikes: false
     },
     {
       name: "cloudberry",
-      stocked: false
+      userLikes: false
     },
     {
       name: "coconut",
-      stocked: false
+      userLikes: false
     },
     {
       name: "cranberry",
-      stocked: false
+      userLikes: false
     },
     {
       name: "cucumber",
-      stocked: false
+      userLikes: false
     },
     {
       name: "currant",
-      stocked: false
+      userLikes: false
     },
     {
       name: "damson",
-      stocked: false
+      userLikes: false
     },
     {
       name: "date",
-      stocked: true
+      userLikes: true
     },
     {
       name: "dragonfruit",
-      stocked: false
+      userLikes: false
     },
     {
       name: "durian",
-      stocked: false
+      userLikes: false
     },
     {
       name: "eggplant",
-      stocked: false
+      userLikes: false
     },
     {
       name: "elderberry",
-      stocked: false
+      userLikes: false
     },
     {
       name: "feijoa",
-      stocked: false
+      userLikes: false
     },
     {
       name: "fig",
-      stocked: false
+      userLikes: false
     },
     {
       name: "goji berry",
-      stocked: true
+      userLikes: true
     },
     {
       name: "gooseberry",
-      stocked: false
+      userLikes: false
     },
     {
       name: "grape",
-      stocked: false
+      userLikes: false
     },
     {
       name: "grapefruit",
-      stocked: true
+      userLikes: true
     },
     {
       name: "guava",
-      stocked: false
+      userLikes: false
     },
     {
       name: "honeydew",
-      stocked: false
+      userLikes: false
     },
     {
       name: "huckleberry",
-      stocked: false
+      userLikes: false
     },
     {
       name: "jackfruit",
-      stocked: false
+      userLikes: false
     },
     {
       name: "jambul",
-      stocked: false
+      userLikes: false
     },
     {
       name: "jujube",
-      stocked: false
+      userLikes: false
     },
     {
       name: "kiwi fruit",
-      stocked: true
+      userLikes: true
     },
     {
       name: "kumquat",
-      stocked: false
+      userLikes: false
     },
     {
       name: "lemon",
-      stocked: false
+      userLikes: false
     },
     {
       name: "lime",
-      stocked: false
+      userLikes: false
     },
     {
       name: "loquat",
-      stocked: false
+      userLikes: false
     },
     {
       name: "lychee",
-      stocked: false
+      userLikes: false
     },
     {
       name: "mandarine",
-      stocked: false
+      userLikes: false
     },
     {
       name: "mango",
-      stocked: true
+      userLikes: true
     },
     {
       name: "mulberry",
-      stocked: false
+      userLikes: false
     },
     {
       name: "nectarine",
-      stocked: false
+      userLikes: false
     },
     {
       name: "nut",
-      stocked: false
+      userLikes: false
     },
     {
       name: "olive",
-      stocked: false
+      userLikes: false
     },
     {
       name: "orange",
-      stocked: true
+      userLikes: true
     },
     {
       name: "pamelo",
-      stocked: false
+      userLikes: false
     },
     {
       name: "papaya",
-      stocked: false
+      userLikes: false
     },
     {
       name: "passionfruit",
-      stocked: false
+      userLikes: false
     },
     {
       name: "peach",
-      stocked: false
+      userLikes: false
     },
     {
       name: "pear",
-      stocked: false
+      userLikes: false
     },
     {
       name: "persimmon",
-      stocked: true
+      userLikes: true
     },
     {
       name: "physalis",
-      stocked: false
+      userLikes: false
     },
     {
       name: "pineapple",
-      stocked: false
+      userLikes: false
     },
     {
       name: "plum",
-      stocked: false
+      userLikes: false
     },
     {
       name: "pomegranate",
-      stocked: false
+      userLikes: false
     },
     {
       name: "pomelo",
-      stocked: false
+      userLikes: false
     },
     {
       name: "purple mangosteen",
-      stocked: false
+      userLikes: false
     },
     {
       name: "quince",
-      stocked: false
+      userLikes: false
     },
     {
       name: "raisin",
-      stocked: false
+      userLikes: false
     },
     {
       name: "rambutan",
-      stocked: false
+      userLikes: false
     },
     {
       name: "raspberry",
-      stocked: false
+      userLikes: false
     },
     {
       name: "redcurrant",
-      stocked: false
+      userLikes: false
     },
     {
       name: "rock melon",
-      stocked: true
+      userLikes: true
     },
     {
       name: "salal berry",
-      stocked: false
+      userLikes: false
     },
     {
       name: "satsuma",
-      stocked: false
+      userLikes: false
     },
     {
       name: "star fruit",
-      stocked: false
+      userLikes: false
     },
     {
       name: "strawberry",
-      stocked: false
+      userLikes: false
     },
     {
       name: "tamarillo",
-      stocked: false
+      userLikes: false
     },
     {
       name: "tangerine",
-      stocked: true
+      userLikes: true
     },
     {
       name: "ugli fruit",
-      stocked: false
+      userLikes: false
     },
     {
       name: "watermelon",
-      stocked: false
+      userLikes: false
     }
   ]
 }

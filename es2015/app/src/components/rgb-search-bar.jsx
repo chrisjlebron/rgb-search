@@ -8,6 +8,7 @@ class SearchBar extends React.Component {
     }
 
     handleChange() {
+      debugger;
         this.props.onUserInput (
             this.refs['filterTextInput'].value,
             this.refs['inUserAttrsInput'].checked
@@ -25,14 +26,16 @@ class SearchBar extends React.Component {
                     onChange={this.handleChange}
                 />
                 <p>
-                    <input
-                        type="checkbox"
-                        checked={this.props.inUserAttrs}
-                        ref="inUserAttrsInput"
-                        onChange={this.handleChange}
-                    />
-                    {' '}
-                    Only show products in stock
+                    <label>
+                        <input
+                            type="checkbox"
+                            checked={this.props.inUserAttrs}
+                            ref="inUserAttrsInput"
+                            onChange={this.handleChange}
+                        />
+                        {' '}
+                        Only show products in user attrs
+                    </label>
                 </p>
             </form>
         );
