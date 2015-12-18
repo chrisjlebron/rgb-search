@@ -4,19 +4,13 @@ import ProductRow from './product-row';
 
 const ProductTable = ({products, filterText, inStockOnly}) => {
 
-    let rows = [],
-        lastCategory = null;
+    let rows = [];
 
     products.map((product) => {
         if (product.name.indexOf(filterText) === -1 || (product.stocked && inStockOnly)) {
             return;
         }
 
-        if (product.category !== lastCategory) {
-            rows.push(
-                <CategoryRow category={product.category} key={product.category}/>
-            );
-        }
         rows.push(<ProductRow product={product} key={product.name}/>);
         lastCategory = product.category;
     });
