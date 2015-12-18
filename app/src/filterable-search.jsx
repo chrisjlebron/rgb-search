@@ -1,6 +1,6 @@
 import React from 'react';
-import ProductTable from './components/product-table';
-import SearchBar from './components/search-bar';
+import ProductTable from './components/rgb-product-table';
+import SearchBar from './components/rgb-search-bar';
 
 import fruits from './fixtures/fruits.json'
 

@@ -1,18 +1,16 @@
 import React from 'react';
-import CategoryRow from './category-row';
-import ProductRow from './product-row';
+import ProductRow from './rgb-product-row';
 
-const ProductTable = ({products, filterText, inStockOnly}) => {
+const ProductTable = ({products, filterText, inUserAttrs}) => {
 
     let rows = [];
 
     products.map((product) => {
-        if (product.name.indexOf(filterText) === -1 || (product.stocked && inStockOnly)) {
+        if (product.name.indexOf(filterText) === -1 || (product.stocked && inUserAttrs)) {
             return;
         }
 
         rows.push(<ProductRow product={product} key={product.name}/>);
-        lastCategory = product.category;
     });
 
     return (
@@ -20,7 +18,6 @@ const ProductTable = ({products, filterText, inStockOnly}) => {
             <thead>
             <tr>
                 <th>Name</th>
-                <th>Price</th>
             </tr>
             </thead>
             <tbody>{rows}</tbody>
