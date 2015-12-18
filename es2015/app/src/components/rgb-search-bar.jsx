@@ -8,7 +8,7 @@ class SearchBar extends React.Component {
     }
 
     handleChange() {
-      debugger;
+      // debugger;
         this.props.onUserInput (
             this.refs['filterTextInput'].value,
             this.refs['inUserAttrsInput'].checked
@@ -17,7 +17,7 @@ class SearchBar extends React.Component {
 
     render() {
         return (
-            <form>
+            <form className="SearchBar">
                 <input
                     type="text"
                     placeholder="Search..."

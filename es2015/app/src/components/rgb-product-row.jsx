@@ -6,7 +6,7 @@ const ProductRow = ({product, matches}) => {
   if (product.userLikes) {
     selector += ' in-user-attrs';
   }
-  debugger;
+  // debugger;
 
   // @TODO: again, NOT the "React way"
   if (matches) {
@@ -14,11 +14,9 @@ const ProductRow = ({product, matches}) => {
   }
 
   return (
-    <tr>
-      <td>
-        <span className={selector}>{product.name}</span>
-      </td>
-    </tr>
+    <li className={selector}>
+      <span>{product.name}</span>
+    </li>
   );
 };
 
