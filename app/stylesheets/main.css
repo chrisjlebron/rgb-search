@@ -2,3 +2,20 @@ body {
   background: #f0f0f0;
   color: #333;
 }
+
+.our-results {
+  color: rgb(70, 0, 0);
+}
+
+.in-user-attrs {
+  color: rgb(70, 0, 200);
+}
+
+.from-input {
+  color: rgb(70, 180, 0);
+}
+
+/* if being typed & in user attrs */
+.in-user-attrs.from-input {
+  color: rgb(70, 200, 180);
+}

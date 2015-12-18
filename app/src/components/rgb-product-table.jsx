@@ -1,16 +1,23 @@
 import React from 'react';
 import ProductRow from './rgb-product-row';
 
-const ProductTable = ({products, filterText, inUserAttrs}) => {
+const ProductTable = ({products, filterText, inUserAttrs, matches}) => {
 
     let rows = [];
 
     products.map((product) => {
-        if (product.name.indexOf(filterText) === -1 || (product.stocked && inUserAttrs)) {
-            return;
-        }
+      let textInName = product.name.toLowerCase().indexOf(filterText.toLowerCase()) !== -1;
 
-        rows.push(<ProductRow product={product} key={product.name}/>);
+      if (!textInName || (!product.userLikes && inUserAttrs)) {
+          return;
+      }
+
+      // @TODO: Not great. This isn't the "React way"
+      // if (textInName && product.userLikes) {
+      //   matches = true;
+      // }
+
+      rows.push(<ProductRow key={product.name} product={product} matches={matches}/>);
     });
 
     return (

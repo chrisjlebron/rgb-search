@@ -13,14 +13,16 @@ class FilterableSearch extends React.Component {
 
     this.state = {
       filterText: '',
-      inUserAttrs: false
+      inUserAttrs: false,
+      matches: false
     }
   }
 
-  handleUserInput(filterText, inUserAttrs) {
+  handleUserInput(filterText, inUserAttrs, matches) {
     this.setState({
       filterText: filterText,
-      inUserAttrs: inUserAttrs
+      inUserAttrs: inUserAttrs,
+      matches: matches
     });
   }
 
@@ -34,11 +36,13 @@ class FilterableSearch extends React.Component {
           filterText={this.state.filterText}
           inUserAttrs={this.state.inUserAttrs}
           onUserInput={this.handleUserInput}
+          matches={this.state.matches}
         />
         <ProductTable
           products={products}
           filterText={this.state.filterText}
           inUserAttrs={this.state.inUserAttrs}
+          matches={this.state.matches}
         />
       </div>
     )
