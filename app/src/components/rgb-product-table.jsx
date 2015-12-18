@@ -21,14 +21,7 @@ const ProductTable = ({products, filterText, inUserAttrs, matches}) => {
     });
 
     return (
-        <table>
-            <thead>
-            <tr>
-                <th>Name</th>
-            </tr>
-            </thead>
-            <tbody>{rows}</tbody>
-        </table>
+      <ul className="ProductTable">{rows}</ul>
     );
 }
 
