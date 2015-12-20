@@ -8,7 +8,7 @@ body {
   background-color: rgb(70, 0, 0);
 }
 
-.in-user-attrs {
+.user-likes {
   background-color: rgb(70, 0, 200);
 }
 
@@ -17,7 +17,7 @@ body {
 }
 
 /* if being typed & in user attrs */
-.in-user-attrs.from-input {
+.user-likes.from-input {
   background-color: rgb(70, 200, 180);
 }
 

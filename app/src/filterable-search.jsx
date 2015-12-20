@@ -13,15 +13,15 @@ class FilterableSearch extends React.Component {
 
     this.state = {
       filterText: '',
-      inUserAttrs: false,
+      isLoggedIn: false,
       matches: []
     }
   }
 
-  handleUserInput(filterText, inUserAttrs, matches) {
+  handleUserInput(filterText, isLoggedIn, matches) {
     this.setState({
       filterText: filterText,
-      inUserAttrs: inUserAttrs,
+      isLoggedIn: isLoggedIn,
       matches: matches
     });
   }
@@ -34,7 +34,7 @@ class FilterableSearch extends React.Component {
       <div>
         <SearchBar
           filterText={this.state.filterText}
-          inUserAttrs={this.state.inUserAttrs}
+          isLoggedIn={this.state.isLoggedIn}
           onUserInput={this.handleUserInput}
           matches={this.state.matches}
           products={products}
@@ -42,7 +42,7 @@ class FilterableSearch extends React.Component {
         <ProductTable
           products={products}
           filterText={this.state.filterText}
-          inUserAttrs={this.state.inUserAttrs}
+          isLoggedIn={this.state.isLoggedIn}
           matches={this.state.matches}
         />
       </div>
