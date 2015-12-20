@@ -1,10 +1,10 @@
 import React from 'react';
 
-const ProductRow = ({product, matches}) => {
+const ProductRow = ({product, matches, isLoggedIn}) => {
   var selector = 'our-results';
 
-  if (product.userLikes) {
-    selector += ' in-user-attrs';
+  if (product.userLikes && isLoggedIn) {
+    selector += ' user-likes';
   }
 
   if (matches.length) {

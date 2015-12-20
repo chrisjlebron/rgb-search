@@ -10,7 +10,7 @@ class SearchBar extends React.Component {
     handleChange() {
       this.props.onUserInput (
         this.refs['filterTextInput'].value,
-        this.refs['inUserAttrsInput'].checked,
+        this.refs['isLoggedInInput'].checked,
         this.props.products.filter((product) => {
           let currentInput = this.refs.filterTextInput.value;
           return currentInput.length ?
@@ -34,12 +34,12 @@ class SearchBar extends React.Component {
                     <label>
                         <input
                             type="checkbox"
-                            checked={this.props.inUserAttrs}
-                            ref="inUserAttrsInput"
+                            checked={this.props.isLoggedIn}
+                            ref="isLoggedInInput"
                             onChange={this.handleChange}
                         />
                         {' '}
-                        Only show products in user attrs
+                        Log in?
                     </label>
                 </p>
             </form>
