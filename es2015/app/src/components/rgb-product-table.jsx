@@ -11,11 +11,8 @@ const ProductTable = ({products, filterText, inUserAttrs, matches}) => {
       if (!textInName || (!product.userLikes && inUserAttrs)) {
           return;
       }
-
-      // @TODO: Not great. This isn't the "React way"
-      // if (textInName && product.userLikes) {
-      //   matches = true;
-      // }
+      // if product.name in matches, move to top of list...
+      // debugger;
 
       rows.push(<ProductRow key={product.name} product={product} matches={matches}/>);
     });

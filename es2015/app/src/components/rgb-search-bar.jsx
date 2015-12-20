@@ -8,11 +8,16 @@ class SearchBar extends React.Component {
     }
 
     handleChange() {
-      // debugger;
-        this.props.onUserInput (
-            this.refs['filterTextInput'].value,
-            this.refs['inUserAttrsInput'].checked
-        );
+      this.props.onUserInput (
+        this.refs['filterTextInput'].value,
+        this.refs['inUserAttrsInput'].checked,
+        this.props.products.filter((product) => {
+          let currentInput = this.refs.filterTextInput.value;
+          return currentInput.length ?
+            product.name.indexOf(this.refs.filterTextInput.value) !== -1 :
+            false;
+        })
+      );
     }
 
     render() {
