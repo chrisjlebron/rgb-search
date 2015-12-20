@@ -6,10 +6,8 @@ const ProductRow = ({product, matches}) => {
   if (product.userLikes) {
     selector += ' in-user-attrs';
   }
-  // debugger;
 
-  // @TODO: again, NOT the "React way"
-  if (matches) {
+  if (matches.length) {
     selector += ' from-input';
   }
 
