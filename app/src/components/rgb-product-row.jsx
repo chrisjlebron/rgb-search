@@ -1,4 +1,5 @@
 import React from 'react';
+import {findIndex} from 'lodash';
 
 const ProductRow = ({product, matches, isLoggedIn}) => {
   var selector = 'our-results';
@@ -7,7 +8,7 @@ const ProductRow = ({product, matches, isLoggedIn}) => {
     selector += ' user-likes';
   }
 
-  if (matches.length) {
+  if (matches.length && findIndex(matches, product) !== -1) {
     selector += ' from-input';
   }
 
