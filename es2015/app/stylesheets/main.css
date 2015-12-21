@@ -5,20 +5,20 @@ body {
 }
 
 .our-results {
-  background-color: rgb(70, 0, 0);
+  background-color: rgb(70, 0, 0) !important;
 }
 
 .user-likes {
-  background-color: rgb(70, 0, 200);
+  background-color: rgb(70, 0, 200) !important;
 }
 
 .from-input {
-  background-color: rgb(70, 180, 0);
+  background-color: rgb(70, 180, 0) !important;
 }
 
 /* if being typed & in user attrs */
 .user-likes.from-input {
-  background-color: rgb(70, 200, 180);
+  background-color: rgb(70, 200, 180) !important;
 }
 
 .ProductTable {
@@ -76,4 +76,32 @@ body {
   padding: 1em;
   min-width: 50%;
   font-size: 1em;
+}
+
+.Legend {
+  margin: 1em;
+}
+
+.Legend h4 {
+  margin-left: 1.5em;
+}
+
+.Legend ul {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 1.5em;
+}
+
+.Legend ul li {
+  margin: 0 1em 0 0;
+  display: inline-block;
+}
+
+.Legend .color-key {
+  display: inline-block;
+  width: 20px;
+  height: 1em;
+  margin-right: .25em;
+  background-color: black;
+  vertical-align: middle;
 }

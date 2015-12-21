@@ -1,6 +1,7 @@
 import React from 'react';
 import ProductTable from './components/rgb-product-table';
 import SearchBar from './components/rgb-search-bar';
+import Legend from './components/rgb-legend';
 
 import getFruits from './fixtures/fruits.js'
 
@@ -39,6 +40,7 @@ class FilterableSearch extends React.Component {
           matches={this.state.matches}
           products={products}
         />
+        <Legend/>
         <ProductTable
           products={products}
           filterText={this.state.filterText}
