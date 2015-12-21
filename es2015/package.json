@@ -9,6 +9,7 @@
     "css-loader": "^0.15.2",
     "html-webpack-plugin": "^1.6.0",
     "http-server": "^0.8.5",
+    "lodash": "^3.10.1",
     "node-libs-browser": "^0.5.2",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
