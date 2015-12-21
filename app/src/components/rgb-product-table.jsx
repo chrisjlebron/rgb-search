@@ -15,14 +15,15 @@ const ProductTable = ({products, filterText, isLoggedIn, matches}) => {
     return inputRows.indexOf(product) === -1 && userRows.indexOf(product) === -1;
   });
 
-  rows = rows.concat(userRows, inputRows, resultRows).reduce((arr, product) => {
+  inputRows = inputRows.sort((a, b) => b.userLikes - a.userLikes);
+
+  rows = rows.concat(inputRows, userRows, resultRows).reduce((arr, product) => {
     arr.push(<ProductRow key={product.name} product={product} matches={matches} isLoggedIn={isLoggedIn}/>);
     return arr;
   }, []);
 
   /*
     Need to:
-    - only highlight results that match query
     - also apply query matching sort to userLikes when logged in
     - avoid "flattenChildren" error
    */
