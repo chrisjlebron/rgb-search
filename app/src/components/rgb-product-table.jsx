@@ -24,6 +24,7 @@ const ProductTable = ({products, filterText, isLoggedIn, matches}) => {
     Need to:
     - only highlight results that match query
     - also apply query matching sort to userLikes when logged in
+    - avoid "flattenChildren" error
    */
 
 
