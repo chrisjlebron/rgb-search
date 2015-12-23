@@ -5,40 +5,40 @@ import ProductRow from './rgb-product-row';
 
 const ProductTable = ({products, filterText, isLoggedIn, matches}) => {
 
-  let rows = [];
-  // return arry filtered by match with query
-  let inputRows = products.filter((product) => {
+  let rows = products.reduce((newArr, product, index) => {
     let textInName = filterText.length && product.name.toLowerCase().indexOf(filterText.toLowerCase()) !== -1;
-    return textInName;
-  });
-  // return array filtered by user preferences
-  let userRows = products.filter((product) => {
-    return product.userLikes && isLoggedIn;
-  });
-  // return remaining array
-  let resultRows = products.filter((product) => {
-    return findIndex(inputRows, product) === -1 && findIndex(userRows, product) === -1;
-  });
+    let isShowingUserPrefs = product.userLikes && isLoggedIn;
+    let addToProductArrayAtIndex = (index) => newArr[index] ? newArr[index].concat(product) : [product];
 
-  // sort matched results by user prefs, if logged in
-  inputRows = inputRows.sort((a, b) => {
-    if (isLoggedIn) return b.userLikes - a.userLikes
-  });
+    // add sorted arrays to the new array,
+    // based on text match, user status, & defaults.
+    // Sorting ordered by:
+    if (textInName && isShowingUserPrefs) {
+      // 1) text matched query & user prefs
+      newArr[0] = addToProductArrayAtIndex(0);
+    } else if (textInName) {
+      // 2) text matched query
+      newArr[1] = addToProductArrayAtIndex(1);
+    } else if (isShowingUserPrefs) {
+      // 3) user prefs
+      newArr[2] = addToProductArrayAtIndex(2);
+    } else {
+      // 4) defaults
+      newArr[3] = addToProductArrayAtIndex(3);
+    }
 
-  rows = rows.concat(inputRows, userRows, resultRows)
-    .reduce((newArr, product, index) => {
-      // if product is not in new array, add it, else move on
-      if (findIndex(newArr, product) === -1) newArr.push(product);
-      return newArr;
-    }, [])
-    .map((product) => {
-      return <ProductRow
-        key={product.name}
-        product={product}
-        matches={matches}
-        isLoggedIn={isLoggedIn}
-        />;
-    });
+    return newArr;
+  }, [])
+  // flatten array of arrays
+  .reduce((a,b) => a.concat(b))
+  .map((product) => {
+    return <ProductRow
+      key={product.name}
+      product={product}
+      matches={matches}
+      isLoggedIn={isLoggedIn}
+      />;
+  });
 
   return (
     <ul className="ProductTable">{rows}</ul>
