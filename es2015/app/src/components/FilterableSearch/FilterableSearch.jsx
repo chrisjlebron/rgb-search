@@ -1,9 +1,9 @@
 import React from 'react';
-import ProductTable from './components/product-list';
-import SearchBar from './components/search-bar';
-import Legend from './components/legend';
+import ProductList from './ProductList';
+import SearchBar from './SearchBar';
+import Legend from './Legend';
 
-import getFruits from './fixtures/fruits.js'
+import getFruits from '../../fixtures/fruits.js'
 
 class FilterableSearch extends React.Component {
 
@@ -41,7 +41,7 @@ class FilterableSearch extends React.Component {
           products={products}
         />
         <Legend/>
-        <ProductTable
+        <ProductList
           products={products}
           filterText={this.state.filterText}
           isLoggedIn={this.state.isLoggedIn}
