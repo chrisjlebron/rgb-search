@@ -28,14 +28,16 @@ const ProductTable = ({products, filterText, isLoggedIn, matches}) => {
     return newArr;
   }, [])
   // flatten array of arrays
-  .reduce((a,b) => a.concat(b))
+  .reduce((a, b) => a.concat(b))
   .map((product) => {
-    return <ProductRow
-      key={product.name}
-      product={product}
-      matches={matches}
-      isLoggedIn={isLoggedIn}
-      />;
+    return (
+      <ProductRow
+        key={product.name}
+        product={product}
+        matches={matches}
+        isLoggedIn={isLoggedIn}
+      />
+    );
   });
 
   return (

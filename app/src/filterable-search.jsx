@@ -48,7 +48,7 @@ class FilterableSearch extends React.Component {
           matches={this.state.matches}
         />
       </div>
-    )
+    );
   }
 
 }

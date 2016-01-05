@@ -2,6 +2,17 @@ import React from 'react';
 
 class SearchBar extends React.Component {
 
+    // @TODO: can I use "static"? I think it's ES2016...
+    // @TODO: Also, feels like propTypes definitions should be
+    // higher up the component hierarcy...
+
+    // static propTypes = {
+    //   products: React.PropTypes.arrayOf(React.PropTypes.object),
+    //   onUserInput: React.PropTypes.func,
+    //   isLoggedIn: React.PropTypes.bool,
+    //   filterText: React.PropTypes.string
+    // }
+
     constructor() {
         super();
         this.handleChange = this.handleChange.bind(this);
@@ -9,12 +20,12 @@ class SearchBar extends React.Component {
 
     handleChange() {
       this.props.onUserInput (
-        this.refs['filterTextInput'].value,
-        this.refs['isLoggedInInput'].checked,
+        this._filterTextInput.value,
+        this._isLoggedInInput.checked,
         this.props.products.filter((product) => {
-          let currentInput = this.refs.filterTextInput.value;
+          let currentInput = this._filterTextInput.value;
           return currentInput.length ?
-            product.name.indexOf(this.refs.filterTextInput.value) !== -1 :
+            product.name.indexOf(this._filterTextInput.value) !== -1 :
             false;
         })
       );
@@ -24,27 +35,33 @@ class SearchBar extends React.Component {
         return (
             <form className="SearchBar">
                 <input
-                    type="text"
-                    placeholder="Search..."
-                    value={this.props.filterText}
-                    ref="filterTextInput"
-                    onChange={this.handleChange}
+                  type="text"
+                  placeholder="Search..."
+                  value={this.props.filterText}
+                  ref={(component) => this._filterTextInput = component}
+                  onChange={this.handleChange}
                 />
                 <p>
                     <label>
                         <input
-                            type="checkbox"
-                            checked={this.props.isLoggedIn}
-                            ref="isLoggedInInput"
-                            onChange={this.handleChange}
+                          type="checkbox"
+                          checked={this.props.isLoggedIn}
+                          ref={(component) => this._isLoggedInInput = component}
+                          onChange={this.handleChange}
                         />
-                        {' '}
-                        Log in?
+                        {' Log in?'}
                     </label>
                 </p>
             </form>
         );
     }
 }
+
+SearchBar.propTypes = {
+  products: React.PropTypes.arrayOf(React.PropTypes.object),
+  onUserInput: React.PropTypes.func,
+  isLoggedIn: React.PropTypes.bool,
+  filterText: React.PropTypes.string
+};
 
 export default SearchBar;
