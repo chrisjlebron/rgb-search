@@ -3,8 +3,6 @@ import React from 'react';
 import {render} from 'react-dom';
 import FilterableSearch from './src/filterable-search';
 
-// init shell
-renderShell();
 
 function renderShell() {
     var shell = document.createElement('div');
@@ -12,3 +10,6 @@ function renderShell() {
     document.body.appendChild(shell);
     render(<FilterableSearch/>, shell);
 }
+
+// init shell
+renderShell();
