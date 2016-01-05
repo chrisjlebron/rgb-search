@@ -33,6 +33,7 @@ class FilterableSearch extends React.Component {
 
     return (
       <div>
+        <h2>{'Filterable Search'}</h2>
         <SearchBar
           filterText={this.state.filterText}
           isLoggedIn={this.state.isLoggedIn}
