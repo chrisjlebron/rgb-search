@@ -25,19 +25,36 @@ class App extends React.Component {
 
   render() {
     let Child;
+    let activeClass = 'active';
+    const HomeRoute = '/';
+    const FSRoute = '/filterable-search';
+    const CWRoute = '/color-wheel-search';
+
     switch (this.state.route) {
-      case '/filterable-search': Child = FilterableSearch; break;
-      case '/color-wheel-search': Child = ColorWheelSearch; break;
+      case FSRoute:
+        Child = FilterableSearch;
+        break;
+      case CWRoute:
+        Child = ColorWheelSearch;
+        break;
+      case HomeRoute: Child = Home;
       default: Child = Home;
     }
 
+
     return (
-      <div>
+      <div className="App">
         <h1>{'RGB Search Prototypes'}</h1>
-        <ul>
-          <li><a href="#/">{'Home'}</a></li>
-          <li><a href="#/filterable-search">{'Filterable Search'}</a></li>
-          <li><a href="#/color-wheel-search">{'Color Wheel Search'}</a></li>
+        <ul className="nav">
+          <li className={this.state.route === HomeRoute ? 'active' : ''}>
+            <a href="#/">{'Home'}</a>
+          </li>
+          <li className={this.state.route === FSRoute ? 'active' : ''}>
+            <a href="#/filterable-search">{'Filterable Search'}</a>
+          </li>
+          <li className={this.state.route === CWRoute ? 'active' : ''}>
+            <a href="#/color-wheel-search">{'Color Wheel Search'}</a>
+          </li>
         </ul>
         <Child/>
       </div>

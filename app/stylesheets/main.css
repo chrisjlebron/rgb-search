@@ -4,6 +4,34 @@ body {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
 }
 
+.App {
+  margin: 1em;
+}
+
+.nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav > li {
+  display: inline-block;
+  margin: .5em .5em 1.5em 0;
+}
+.nav > li > a {
+  padding: .75em 1em;
+  border: 1px solid #d0d0d0;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #606060;
+  transition: 150ms;
+}
+.nav > li.active > a,
+.nav > li > a:hover,
+.nav > li > a:focus {
+  /*color: #fff;*/
+  background-color: #c0c0c0;
+}
+
 .our-results {
   background-color: rgb(70, 0, 0) !important;
 }
@@ -23,8 +51,8 @@ body {
 
 .ProductList {
   list-style: none;
-  margin: 1em;
-  padding: 1em;
+  margin: 1em 0;
+  padding: 1em 0;
 
   display: -webkit-box;
   display: -webkit-flex;
@@ -68,8 +96,8 @@ body {
 }
 
 .SearchBar {
-  margin: 1em 1em 1em 1.25em;
-  padding: 1em;
+  margin: 1em 0;
+  padding: 1em 0 1em .25em;
 }
 
 .SearchBar input[type="text"] {
@@ -79,17 +107,17 @@ body {
 }
 
 .Legend {
-  margin: 1em;
+  margin: 1em 0;
 }
 
 .Legend h4 {
-  margin-left: 1.5em;
+  margin-left: .5em;
 }
 
 .Legend ul {
   list-style: none;
   margin: 0;
-  padding: 0 0 0 1.5em;
+  padding: 0 0 0 .5em;
 }
 
 .Legend ul li {
