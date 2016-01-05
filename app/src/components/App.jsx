@@ -1,6 +1,6 @@
 import '../../stylesheets/main.css';
 import React from 'react';
-import {render} from 'react-dom';
+
 import Home from './Home';
 import FilterableSearch from '../../src/components/FilterableSearch/FilterableSearch';
 import ColorWheelSearch from '../../src/components/ColorWheelSearch/ColorWheelSearch';
