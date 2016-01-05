@@ -1,7 +1,7 @@
 import './stylesheets/main.css';
 import React from 'react';
 import {render} from 'react-dom';
-import FilterableSearch from './src/filterable-search';
+import FilterableSearch from './src/components/FilterableSearch/FilterableSearch';
 
 
 function renderShell() {

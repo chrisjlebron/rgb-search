@@ -1,5 +1,5 @@
 import React from 'react';
-import ListItem from './list-item';
+import ListItem from './ListItem';
 
 const ProductList = ({products, filterText, isLoggedIn, matches}) => {
 
