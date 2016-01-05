@@ -1,9 +1,9 @@
 import React from 'react';
-import ProductRow from './rgb-product-row';
+import ListItem from './list-item';
 
-const ProductTable = ({products, filterText, isLoggedIn, matches}) => {
+const ProductList = ({products, filterText, isLoggedIn, matches}) => {
 
-  let rows = products.reduce((newArr, product) => {
+  let listItems = products.reduce((newArr, product) => {
     let textInName = filterText.length && product.name.toLowerCase().indexOf(filterText.toLowerCase()) !== -1;
     let isShowingUserPrefs = product.userLikes && isLoggedIn;
     let addToProductArrayAtIndex = (index) => newArr[index] = newArr[index] ? newArr[index].concat(product) : [product];
@@ -31,7 +31,7 @@ const ProductTable = ({products, filterText, isLoggedIn, matches}) => {
   .reduce((a, b) => a.concat(b))
   .map((product) => {
     return (
-      <ProductRow
+      <ListItem
         key={product.name}
         product={product}
         matches={matches}
@@ -41,8 +41,8 @@ const ProductTable = ({products, filterText, isLoggedIn, matches}) => {
   });
 
   return (
-    <ul className="ProductTable">{rows}</ul>
+    <ul className="ProductList">{listItems}</ul>
   );
 }
 
-export default ProductTable;
+export default ProductList;

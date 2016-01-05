@@ -1,7 +1,7 @@
 import React from 'react';
-import ProductTable from './components/rgb-product-table';
-import SearchBar from './components/rgb-search-bar';
-import Legend from './components/rgb-legend';
+import ProductTable from './components/product-list';
+import SearchBar from './components/search-bar';
+import Legend from './components/legend';
 
 import getFruits from './fixtures/fruits.js'
 
