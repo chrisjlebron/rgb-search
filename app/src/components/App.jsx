@@ -1,14 +1,9 @@
 import '../../stylesheets/main.css';
 import React from 'react';
 import {render} from 'react-dom';
+import Home from './Home';
 import FilterableSearch from '../../src/components/FilterableSearch/FilterableSearch';
 import ColorWheelSearch from '../../src/components/ColorWheelSearch/ColorWheelSearch';
-
-class Home extends React.Component {
-  render() {
-    return <div>{'Select a Prototype Above'}</div>
-  }
-}
 
 
 class App extends React.Component {
