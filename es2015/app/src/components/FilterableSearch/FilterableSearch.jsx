@@ -3,7 +3,7 @@ import ProductList from './ProductList';
 import SearchBar from './SearchBar';
 import Legend from './Legend';
 
-import getFruits from '../../fixtures/fruits.js'
+import fruits from '../../fixtures/fruits.js'
 
 class FilterableSearch extends React.Component {
 
@@ -29,7 +29,7 @@ class FilterableSearch extends React.Component {
 
   render() {
 
-    const products = getFruits();
+    const products = fruits.get();
 
     return (
       <div>

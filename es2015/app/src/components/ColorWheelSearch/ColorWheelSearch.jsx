@@ -1,9 +1,8 @@
 import React from 'react';
 import ProductList from './../FilterableSearch/ProductList';
 import SearchBar from './../FilterableSearch/SearchBar';
-import Legend from './../FilterableSearch/Legend';
 
-import getFruits from '../../fixtures/colors.js'
+import colors from '../../fixtures/colors.js'
 
 class FilterableSearch extends React.Component {
 
@@ -29,7 +28,7 @@ class FilterableSearch extends React.Component {
 
   render() {
 
-    const products = getFruits();
+    const products = colors.get();
 
     return (
       <div>
@@ -40,7 +39,6 @@ class FilterableSearch extends React.Component {
           matches={this.state.matches}
           products={products}
         />
-        <Legend/>
         <ProductList
           products={products}
           filterText={this.state.filterText}
