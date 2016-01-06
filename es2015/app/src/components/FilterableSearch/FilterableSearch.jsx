@@ -3,6 +3,7 @@ import ProductList from './ProductList';
 import SearchBar from './SearchBar';
 import Legend from './Legend';
 
+import '../../../stylesheets/components/FilterableSearch.scss';
 import fruits from '../../fixtures/fruits.js'
 
 class FilterableSearch extends React.Component {

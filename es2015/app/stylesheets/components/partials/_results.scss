@@ -1,0 +1,16 @@
+.our-results {
+  background-color: rgb(70, 0, 0) !important;
+}
+
+.user-likes {
+  background-color: rgb(70, 0, 200) !important;
+}
+
+.from-input {
+  background-color: rgb(70, 180, 0) !important;
+}
+
+/* if being typed & in user attrs */
+.user-likes.from-input {
+  background-color: rgb(70, 200, 180) !important;
+}
