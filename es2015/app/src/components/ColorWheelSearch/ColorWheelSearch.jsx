@@ -1,10 +1,10 @@
 import React from 'react';
-import ProductList from './../FilterableSearch/ProductList';
-import SearchBar from './../FilterableSearch/SearchBar';
+import ResultList from './ResultList';
+import SearchBar from './SearchBar';
 
 import colors from '../../fixtures/colors.js'
 
-class FilterableSearch extends React.Component {
+class ColorWheelSearch extends React.Component {
 
   constructor() {
     super();
@@ -12,39 +12,31 @@ class FilterableSearch extends React.Component {
     this.handleUserInput = this.handleUserInput.bind(this);
 
     this.state = {
-      filterText: '',
-      isLoggedIn: false,
-      matches: []
+      filterText: ''
     }
   }
 
-  handleUserInput(filterText, isLoggedIn, matches) {
+  handleUserInput(filterText) {
     this.setState({
-      filterText: filterText,
-      isLoggedIn: isLoggedIn,
-      matches: matches
+      filterText: filterText
     });
   }
 
   render() {
 
-    const products = colors.get();
+    const colorResults = colors.get();
 
     return (
       <div>
         <h2>{'Color Wheel Search'}</h2>
         <SearchBar
           filterText={this.state.filterText}
-          isLoggedIn={this.state.isLoggedIn}
           onUserInput={this.handleUserInput}
-          matches={this.state.matches}
-          products={products}
+          results={colorResults}
         />
-        <ProductList
-          products={products}
+        <ResultList
+          results={colorResults}
           filterText={this.state.filterText}
-          isLoggedIn={this.state.isLoggedIn}
-          matches={this.state.matches}
         />
       </div>
     );
@@ -52,4 +44,4 @@ class FilterableSearch extends React.Component {
 
 }
 
-export default FilterableSearch;
+export default ColorWheelSearch;
