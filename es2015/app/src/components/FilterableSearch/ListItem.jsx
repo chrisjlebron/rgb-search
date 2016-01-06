@@ -2,7 +2,7 @@ import React from 'react';
 import {findIndex} from 'lodash';
 
 const ListItem = ({product, matches, isLoggedIn}) => {
-  var selector = 'our-results';
+  let selector = 'our-results';
 
   if (product.userLikes && isLoggedIn) {
     selector += ' user-likes';
