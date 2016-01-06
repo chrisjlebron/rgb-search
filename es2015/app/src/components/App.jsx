@@ -1,4 +1,4 @@
-import '../../stylesheets/main.css';
+import '../../stylesheets/main.scss';
 import React from 'react';
 
 import Home from './Home';
