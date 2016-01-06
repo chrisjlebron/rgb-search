@@ -47,7 +47,7 @@ const ResultList = ({results, filterText}) => {
   });
 
   return (
-    <ul className="ResultList">{listItems}</ul>
+    <ul className="result-list">{listItems}</ul>
   );
 }
 

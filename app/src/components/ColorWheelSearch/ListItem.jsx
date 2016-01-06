@@ -2,15 +2,18 @@ import React from 'react';
 import {findIndex} from 'lodash';
 
 const ListItem = ({result}) => {
-  var selector = '';
-
-  // if (matches.length && findIndex(matches, result) !== -1) {
-  //   selector += ' from-input';
-  // }
+  let color = result.value;
+  let liStyles = {
+    backgroundColor: color
+  };
+  let spanStyles = {
+    backgroundColor: 'rgba(0,0,0,.6)',
+    padding: '.25em'
+  };
 
   return (
-    <li className={selector}>
-      <span>{result.name}</span>
+    <li style={liStyles}>
+      <span style={spanStyles}>{result.name}</span>
     </li>
   );
 };

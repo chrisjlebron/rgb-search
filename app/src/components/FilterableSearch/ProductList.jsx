@@ -41,7 +41,7 @@ const ProductList = ({products, filterText, isLoggedIn, matches}) => {
   });
 
   return (
-    <ul className="ProductList">{listItems}</ul>
+    <ul className="result-list">{listItems}</ul>
   );
 }
 
