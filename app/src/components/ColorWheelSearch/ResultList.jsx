@@ -19,10 +19,10 @@ const ResultList = ({results, filterText}) => {
 
     if (filterText.length) {
       // // filterText contains result.name
-      // let match = result.name.toLowerCase().indexOf(filterText.toLowerCase()) !== -1 ? result : undefined;
+      let match = result.name.toLowerCase().indexOf(filterText.toLowerCase()) !== -1 ? result : undefined;
 
       // // filterText equals result.name
-      let match = result.name.toLowerCase() === filterText.toLowerCase() ? result : undefined;
+      // let match = result.name.toLowerCase() === filterText.toLowerCase() ? result : undefined;
 
       if (match) {
         opposite = results.filter((oppResult) => {
@@ -30,8 +30,19 @@ const ResultList = ({results, filterText}) => {
         });
         related = filterRelated(results, match);
         oppositeRelated = filterRelated(results, opposite[0]);
+
+        // @TODO: this seems overkill...
+        let tints = match.tints.map((tint) => {
+          return {
+            name: tint.name.indexOf('50') !== -1 ?
+              tint.name.slice(0, tint.name.indexOf('50')) :
+              tint.name,
+            value: tint.value
+          }
+        });
+
         row = [
-          {title: 'Match', results: [match]},
+          {title: 'Match', results: tints},
           {title: 'Match\'s Neighbors', results: related},
           {title: 'Opposite', results: opposite},
           {title: 'Opposite\'s Neighbors', results: oppositeRelated}
@@ -42,7 +53,8 @@ const ResultList = ({results, filterText}) => {
       }
     } else {
       row = [
-        {title: `${result.name}s`, results: result.tints}
+        // {title: `${result.name}s`, results: result.tints}
+        {title: `${result.name}s`, results: [result]}
       ]
     }
 
