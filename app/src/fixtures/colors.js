@@ -6,7 +6,7 @@ export default {
         value: 'rgb(0, 255, 255)',
         related: [
           'blue-cyan',
-          'green-cyan'
+          'cyan-green'
         ],
         opposite: 'red'
       },

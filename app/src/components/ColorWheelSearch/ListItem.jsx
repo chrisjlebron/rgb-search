@@ -1,5 +1,4 @@
 import React from 'react';
-import {findIndex} from 'lodash';
 
 const ListItem = ({result}) => {
   let color = result.value;
@@ -7,8 +6,10 @@ const ListItem = ({result}) => {
     backgroundColor: color
   };
   let spanStyles = {
+    display: 'inline-block',
+    padding: '.25em',
+    color: '#fff',
     backgroundColor: 'rgba(0,0,0,.6)',
-    padding: '.25em'
   };
 
   return (
