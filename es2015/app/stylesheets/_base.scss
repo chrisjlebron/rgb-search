@@ -7,3 +7,47 @@ body {
 .App {
   margin: 1em;
 }
+
+// @TODO: Take out...
+//
+//
+//
+//
+//
+//
+
+.ResultList,
+.ResultRowList,
+.group-members-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ResultRow {
+  background-color: #e0e0e0;
+  border: 1px solid #d0d0d0;
+  margin-bottom: 1em;
+  padding: 1em;
+}
+
+.ResultRowList {
+  .ResultGroup {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 1em;
+
+    h4 {
+      margin-top: 0;
+    }
+
+    .ListItem {
+      display: inline-block;
+      width: 150px;
+      height: 75px;
+      margin-right: 1em;
+      margin-bottom: 1em;
+      &:last-child { margin-right: 0; }
+    }
+  }
+}
