@@ -5,6 +5,7 @@ import ListItem from './ListItem';
 import {findIndex} from 'lodash';
 
 const ResultList = ({results, filterText}) => {
+  let listClass = '';
   let listItems = results.map((result) => {
     let row;
     let match;
@@ -18,8 +19,14 @@ const ResultList = ({results, filterText}) => {
     };
 
     if (filterText.length) {
+      // // filterText contains result.name
       match = result.name.toLowerCase().indexOf(filterText.toLowerCase()) !== -1 ? result : undefined;
+
+      // // filterText equals result.name
+      // match = result.name.toLowerCase() === filterText.toLowerCase() ? result : undefined;
+      listClass = 'ResultList';
     } else {
+      listClass = 'result-list';
         return (
           <ListItem
             key={result.name}
@@ -51,8 +58,7 @@ const ResultList = ({results, filterText}) => {
   });
 
   return (
-    // <ul className="result-list">{listItems}</ul>
-    <ul>{listItems}</ul>
+    <ul className={listClass}>{listItems}</ul>
   );
 }
 

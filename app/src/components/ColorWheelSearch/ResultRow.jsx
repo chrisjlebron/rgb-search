@@ -15,7 +15,7 @@ const ResultRow = ({row}) => {
     return (
       <li key={id} className="ResultGroup">
         <h4>{resultGroup.title}</h4>
-        <ul>{groupMembers}</ul>
+        <ul className="group-members-list">{groupMembers}</ul>
       </li>
     );
   });

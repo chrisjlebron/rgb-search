@@ -7,13 +7,14 @@ const ListItem = ({result}) => {
   };
   let spanStyles = {
     display: 'inline-block',
+    verticalAlign: 'bottom',
     padding: '.25em',
     color: '#fff',
     backgroundColor: 'rgba(0,0,0,.6)',
   };
 
   return (
-    <li style={liStyles}>
+    <li style={liStyles} className="ListItem">
       <span style={spanStyles}>{result.name}</span>
     </li>
   );

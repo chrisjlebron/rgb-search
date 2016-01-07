@@ -29,7 +29,7 @@
   text-transform: capitalize;
   font-family: monaco, Consolas, 'Lucida Console', monospace;
 
-  li {
+  > li {
     margin: 0 .5em 1em;
     padding: 1em;
     width: 200px;
