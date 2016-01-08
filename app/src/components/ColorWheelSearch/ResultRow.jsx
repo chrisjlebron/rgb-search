@@ -3,6 +3,7 @@ import ListItem from './ListItem'
 
 const ResultRow = ({row}) => {
   let resultRowList = row.map((resultGroup, id) => {
+    let additionalStyles = {};
     let groupMembers = resultGroup.results.map((result) => {
       return (
         <ListItem
@@ -12,8 +13,18 @@ const ResultRow = ({row}) => {
       );
     });
 
+    if (resultGroup.title === 'Match') {
+      additionalStyles = {
+        display: 'block'
+      };
+    }
+
     return (
-      <li key={id} className="ResultGroup">
+      <li
+        key={id}
+        className="ResultGroup"
+        style={additionalStyles}
+      >
         <h4>{resultGroup.title}</h4>
         <ul className="group-members-list">{groupMembers}</ul>
       </li>
