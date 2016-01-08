@@ -21,10 +21,10 @@ const ResultList = ({results, filterText}) => {
 
     if (filterText.length) {
       // // filterText contains result.name
-      let match = result.name.toLowerCase().indexOf(filterText.toLowerCase()) !== -1 ? result : undefined;
+      // let match = result.name.toLowerCase().indexOf(filterText.toLowerCase()) !== -1 ? result : undefined;
 
       // // filterText equals result.name
-      // let match = result.name.toLowerCase() === filterText.toLowerCase() ? result : undefined;
+      let match = result.name.toLowerCase() === filterText.toLowerCase() ? result : undefined;
 
       if (match) {
         opposite = results.filter((oppResult) => {
