@@ -1,8 +1,8 @@
 import React from 'react';
 import {findIndex} from 'lodash';
 
-const ProductRow = ({product, matches, isLoggedIn}) => {
-  var selector = 'our-results';
+const ListItem = ({product, matches, isLoggedIn}) => {
+  let selector = 'our-results';
 
   if (product.userLikes && isLoggedIn) {
     selector += ' user-likes';
@@ -19,4 +19,4 @@ const ProductRow = ({product, matches, isLoggedIn}) => {
   );
 };
 
-export default ProductRow;
+export default ListItem;

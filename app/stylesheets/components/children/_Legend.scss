@@ -1,0 +1,27 @@
+.Legend {
+  margin: 1em 0;
+
+  h4 {
+    margin-left: .5em;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 0 .5em;
+
+    > li {
+      margin: 0 1em 0 0;
+      display: inline-block;
+    }
+  }
+
+  .color-key {
+    display: inline-block;
+    width: 20px;
+    height: 1em;
+    margin-right: .25em;
+    background-color: black;
+    vertical-align: middle;
+  }
+}
