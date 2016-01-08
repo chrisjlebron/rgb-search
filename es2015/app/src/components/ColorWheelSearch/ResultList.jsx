@@ -5,7 +5,9 @@ import ListItem from './ListItem';
 import {findIndex} from 'lodash';
 
 const ResultList = ({results, filterText}) => {
-  let listItems = results.map((result) => {
+  let listItems = results.sort((a, b) => {
+    return a.name > b.name
+  }).map((result) => {
     let row;
     let related;
     let opposite;
