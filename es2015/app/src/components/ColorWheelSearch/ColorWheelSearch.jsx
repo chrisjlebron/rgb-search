@@ -2,7 +2,7 @@ import React from 'react';
 import ResultList from './ResultList';
 import SearchBar from './SearchBar';
 
-import colors from '../../fixtures/colors.js'
+import colors from '../../fixtures/colors'
 
 class ColorWheelSearch extends React.Component {
 
