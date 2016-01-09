@@ -2,24 +2,31 @@ import React from 'react';
 import ResultRow from './ResultRow';
 import ListItem from './ListItem';
 
-import {findIndex} from 'lodash';
+const ResultList = ({results, filterText, categories}) => {
+  let mapListItems = () => {
+    return results.map((result) => {
+      let row;
+      let related;
+      let opposite;
+      let oppositeRelated;
+      let key = result.name;
+      let filterRelated = (outerArray, matchObject) => {
+        return outerArray.filter((relatedResult) => {
+          return matchObject.related.indexOf(relatedResult.name) !== -1;
+        });
+      };
 
-const ResultList = ({results, filterText}) => {
-  let listItems = results.sort((a, b) => {
-    return a.name > b.name
-  }).map((result) => {
-    let row;
-    let related;
-    let opposite;
-    let oppositeRelated;
-    let key = result.name;
-    let filterRelated = (outerArray, matchObject) => {
-      return outerArray.filter((relatedResult) => {
-        return matchObject.related.indexOf(relatedResult.name) !== -1;
-      });
-    };
+      /**
+       * - Display all colors & tints
+       * - Filter text input
+       * - Grab results matching filterText
+       * - Grab matching category object from categories
+       * - Grab tangential data from category object
+       * - Display tangential data as disambiguation unit
+       * - Display main match & vector matches
+       * - Hook up click handler to perform search for clicked element
+       */
 
-    if (filterText.length) {
       // // filterText contains result.name
       // let match = result.name.toLowerCase().indexOf(filterText.toLowerCase()) !== -1 ? result : undefined;
 
@@ -50,23 +57,30 @@ const ResultList = ({results, filterText}) => {
           {title: 'Opposite\'s Neighbors', results: oppositeRelated}
         ];
       } else {
-        // user input doesn't match any results
+        // // user input doesn't match any results
         return false;
       }
-    } else {
-      row = [
-        // {title: `${result.name}s`, results: result.tints}
-        {title: `${result.name}s`, results: [result]}
-      ]
-    }
 
-    return (
+      return (
+        <ResultRow
+          key={key}
+          row={row}
+        />
+      );
+    });
+  };
+
+  let listItems = [(
+      // no user input is default
       <ResultRow
-        key={key}
-        row={row}
+        key={'all'}
+        row={[{title: 'Available Data', results: results}]}
       />
-    );
-  });
+  )];
+
+  if (filterText.length) {
+    listItems = mapListItems();
+  }
 
   return (
     <ul className="ResultList">{listItems}</ul>
