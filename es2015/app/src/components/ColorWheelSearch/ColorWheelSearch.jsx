@@ -2,7 +2,8 @@ import React from 'react';
 import ResultList from './ResultList';
 import SearchBar from './SearchBar';
 
-import colors from '../../fixtures/colors'
+import colors from '../../fixtures/colors-only';
+import colorCategories from '../../fixtures/color-categories';
 
 class ColorWheelSearch extends React.Component {
 
@@ -25,6 +26,7 @@ class ColorWheelSearch extends React.Component {
   render() {
 
     const colorResults = colors.get();
+    const categories = colorCategories.get();
 
     return (
       <div>
@@ -33,10 +35,12 @@ class ColorWheelSearch extends React.Component {
           filterText={this.state.filterText}
           onUserInput={this.handleUserInput}
           results={colorResults}
+          categories={categories}
         />
         <ResultList
           results={colorResults}
           filterText={this.state.filterText}
+          categories={categories}
         />
       </div>
     );
