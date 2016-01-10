@@ -3,13 +3,10 @@ import ResultRow from './ResultRow';
 import ListItem from './ListItem';
 
 const ResultList = ({results, filterText, categories}) => {
-  let mapListItems = () => {
+  let mapResults = () => {
     return results.map((result) => {
       let row;
-      let related;
-      let opposite;
-      let oppositeRelated;
-      let key = result.name;
+      let key;
       let filterRelated = (outerArray, matchObject) => {
         return outerArray.filter((relatedResult) => {
           return matchObject.related.indexOf(relatedResult.name) !== -1;
@@ -17,8 +14,6 @@ const ResultList = ({results, filterText, categories}) => {
       };
 
       /**
-       * - Display all colors & tints
-       * - Filter text input
        * - Grab results matching filterText
        * - Grab matching category object from categories
        * - Grab tangential data from category object
@@ -34,26 +29,18 @@ const ResultList = ({results, filterText, categories}) => {
       let match = result.name.toLowerCase() === filterText.toLowerCase() ? result : undefined;
 
       if (match) {
-        opposite = results.filter((oppResult) => {
-          return oppResult.name === match.opposite;
-        });
-        related = filterRelated(results, match);
-        oppositeRelated = filterRelated(results, opposite[0]);
+        let category = categories.filter((cat) => cat.name === match.category)[0];
+        let matches = results.filter((res) => res.category === category.name);
+        let related = results.filter((res) => category.related.indexOf(res.name) !== -1);
+        let opposite = results.filter((res) => res.name === category.opposite)[0];
+        let oppCategory = categories.filter((cat) => cat.name === opposite.category)[0];
+        let oppositeRelated = results.filter((res) => oppCategory.related.indexOf(res.name) !== -1);
 
-        // @TODO: this seems overkill...
-        let tints = match.tints.map((tint) => {
-          return {
-            name: tint.name.indexOf('50') !== -1 ?
-              tint.name.slice(0, tint.name.indexOf('50')) :
-              tint.name,
-            value: tint.value
-          }
-        });
-
+        key = match.name;
         row = [
-          {title: 'Match', results: tints},
+          {title: 'Match', results: matches},
           {title: 'Match\'s Neighbors', results: related},
-          {title: 'Opposite', results: opposite},
+          {title: 'Opposite', results: [opposite]},
           {title: 'Opposite\'s Neighbors', results: oppositeRelated}
         ];
       } else {
@@ -79,7 +66,7 @@ const ResultList = ({results, filterText, categories}) => {
   )];
 
   if (filterText.length) {
-    listItems = mapListItems();
+    listItems = mapResults();
   }
 
   return (
