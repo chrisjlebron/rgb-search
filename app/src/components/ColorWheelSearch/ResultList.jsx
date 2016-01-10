@@ -28,7 +28,13 @@ const ResultList = ({results, filterText, categories}) => {
 
       if (match) {
         let category = categories.filter((cat) => cat.name === match.category)[0];
-        let matches = results.filter((res) => res.category === category.name);
+        let matches = results
+          .filter((res) => res.category === category.name)
+          .sort((a, b) => {
+            if (a.name === filterText) return -1;
+            if (b.name === filterText) return 1;
+            return 0;
+          });
         let related = results.filter((res) => category.related.indexOf(res.name) !== -1);
         let opposite = results.filter((res) => res.name === category.opposite)[0];
         let oppCategory = categories.filter((cat) => cat.name === opposite.category)[0];
