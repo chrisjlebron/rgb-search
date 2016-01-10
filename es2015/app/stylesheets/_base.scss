@@ -24,14 +24,6 @@ body {
   list-style: none;
 }
 
-.ResultRow {
-  background-color: #fcfcfc;
-  border: 1px solid #d0d0d0;
-  box-shadow: 0 0 3px rgba(0,0,0,.15);
-  margin-bottom: 1em;
-  padding: 1em;
-}
-
 .ResultRowList {
   .ResultGroup {
     display: inline-block;
@@ -48,7 +40,22 @@ body {
       height: 75px;
       margin-right: 1em;
       margin-bottom: 1em;
+
       &:last-child { margin-right: 0; }
+
+    }
+
+    &.disambiguation-group .ListItem {
+      height: auto;
+    }
+
+    &.matching-group {
+      display: block;
+      background-color: #fcfcfc;
+      border: 1px solid #d0d0d0;
+      box-shadow: 0 0 3px rgba(0,0,0,.15);
+      margin-bottom: 1em;
+      padding: 1em;
     }
   }
 }

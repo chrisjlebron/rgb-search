@@ -12,11 +12,6 @@ const ResultList = ({results, filterText, categories}) => {
       let key;
 
       /**
-       * - Grab results matching filterText
-       * - Grab matching category object from categories
-       * - Grab tangential data from category object
-       * - Display tangential data as disambiguation unit
-       * - Display main match & vector matches
        * - Hook up click handler to perform search for clicked element
        */
 
@@ -42,10 +37,10 @@ const ResultList = ({results, filterText, categories}) => {
 
         key = match.name;
         row = [
-          {title: 'Match', results: matches},
           {title: 'Match\'s Neighbors', results: related},
           {title: 'Opposite', results: [opposite]},
-          {title: 'Opposite\'s Neighbors', results: oppositeRelated}
+          {title: 'Opposite\'s Neighbors', results: oppositeRelated},
+          {title: 'Match', results: matches}
         ];
       } else {
         // // user input doesn't match any results
