@@ -1,17 +1,15 @@
 import React from 'react';
 import ResultRow from './ResultRow';
-import ListItem from './ListItem';
+
+import {sortByAll} from 'lodash';
 
 const ResultList = ({results, filterText, categories}) => {
+  results = sortByAll(results, ['category', 'name']);
+
   let mapResults = () => {
     return results.map((result) => {
       let row;
       let key;
-      let filterRelated = (outerArray, matchObject) => {
-        return outerArray.filter((relatedResult) => {
-          return matchObject.related.indexOf(relatedResult.name) !== -1;
-        });
-      };
 
       /**
        * - Grab results matching filterText
