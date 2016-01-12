@@ -1,7 +1,7 @@
 import React from 'react';
 import ListItem from './ListItem'
 
-const ResultRow = ({row}) => {
+const ResultRow = ({row, onUserClick}) => {
   let resultRowList = row.map((resultGroup, id) => {
     let additionalClasses = '';
     let groupMembers = resultGroup.results.map((result) => {
@@ -9,6 +9,7 @@ const ResultRow = ({row}) => {
         <ListItem
           key={result.name}
           result={result}
+          onUserClick={onUserClick}
         />
       );
     });

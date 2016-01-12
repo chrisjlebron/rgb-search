@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ListItem = ({result}) => {
+const ListItem = ({result, onUserClick}) => {
   let color = result.value;
   let liStyles = {
     backgroundColor: color
@@ -13,11 +13,24 @@ const ListItem = ({result}) => {
     backgroundColor: 'rgba(0,0,0,.6)',
   };
 
-  return (
-    <li style={liStyles} className="ListItem">
-      <span style={spanStyles}>{result.name}</span>
-    </li>
-  );
+  return {
+
+    render() {
+      let handleClick = function(newFilterText) {
+        onUserClick(result.name);
+      };
+
+      return (
+        <li
+          className="ListItem"
+          style={liStyles}
+          onClick={handleClick}
+        >
+          <span style={spanStyles}>{result.name}</span>
+        </li>
+      );
+    }
+  }
 };
 
 export default ListItem;
