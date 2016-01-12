@@ -41,6 +41,7 @@ class ColorWheelSearch extends React.Component {
           results={colorResults}
           filterText={this.state.filterText}
           categories={categories}
+          onUserClick={this.handleUserInput}
         />
       </div>
     );

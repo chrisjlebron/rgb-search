@@ -3,7 +3,7 @@ import ResultRow from './ResultRow';
 
 import {sortByAll} from 'lodash';
 
-const ResultList = ({results, filterText, categories}) => {
+const ResultList = ({results, filterText, categories, onUserClick}) => {
   results = sortByAll(results, ['category', 'name']);
 
   let mapResults = () => {
@@ -13,6 +13,8 @@ const ResultList = ({results, filterText, categories}) => {
 
       /**
        * - Hook up click handler to perform search for clicked element
+       * - Clean up props
+       * - Clean up CSS
        */
 
       // // filterText contains result.name
@@ -51,6 +53,7 @@ const ResultList = ({results, filterText, categories}) => {
         <ResultRow
           key={key}
           row={row}
+          onUserClick={onUserClick}
         />
       );
     });
@@ -61,6 +64,7 @@ const ResultList = ({results, filterText, categories}) => {
       <ResultRow
         key={'all'}
         row={[{title: 'Available Data', results: results}]}
+        onUserClick={onUserClick}
       />
   )];
 
