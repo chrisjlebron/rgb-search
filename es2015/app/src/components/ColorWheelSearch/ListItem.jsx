@@ -14,17 +14,16 @@ const ListItem = ({result, onUserClick}) => {
   };
 
   return {
+    handleClick() {
+      onUserClick(result.name);
+    },
 
     render() {
-      let handleClick = function(newFilterText) {
-        onUserClick(result.name);
-      };
-
       return (
         <li
           className="ListItem"
           style={liStyles}
-          onClick={handleClick}
+          onClick={this.handleClick}
         >
           <span style={spanStyles}>{result.name}</span>
         </li>
