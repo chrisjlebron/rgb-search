@@ -39,7 +39,8 @@ class SearchBar extends React.Component {
 SearchBar.propTypes = {
   results: React.PropTypes.arrayOf(React.PropTypes.object),
   onUserInput: React.PropTypes.func,
-  filterText: React.PropTypes.string
+  filterText: React.PropTypes.string,
+  categories: React.PropTypes.arrayOf(React.PropTypes.object)
 };
 
 export default SearchBar;
