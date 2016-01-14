@@ -49,13 +49,14 @@ const SearchResults = (props) => {
     opposite = results.filter((result) => result.name === category.opposite)[0];
     oppositeCategory = categories.filter((cat) => cat.name === opposite.category)[0];
     oppositeRelated = results.filter((result) => oppositeCategory.related.indexOf(result.name) !== -1);
-  }
-
-  if (exactMatch.length) {
     disambiguationRow = [(
       <DisambiguationRow
         key='disambiguation'
-        row={[{title: 'Match\'s Neighbors', results: related}, {title: 'Opposite', results: [opposite]}, {title: 'Opposite\'s Neighbors', results: oppositeRelated}]}
+        row={[
+          {title: 'Match\'s Neighbors', results: related},
+          {title: 'Opposite', results: [opposite]},
+          {title: 'Opposite\'s Neighbors', results: oppositeRelated}
+        ]}
         onUserClick={props.onUserClick}
       />
     )];
