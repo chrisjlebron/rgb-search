@@ -12,11 +12,11 @@ const SearchResults = (props) => {
   const filterText = props.filterText;
 
   let category,
-      categoryMatches,
       related,
       opposite,
       oppositeCategory,
       oppositeRelated;
+
 
   // don't show disambiguation section by default
   let disambiguationRow = null;
@@ -73,8 +73,8 @@ const SearchResults = (props) => {
 
   return (
     <div className="SearchResults">
-      <div className="ResultDisambiguation" {...props}>{disambiguationRow}</div>
-      <ul className="ResultList" {...props}>
+      <div className="ResultDisambiguation">{disambiguationRow}</div>
+      <ul className="ResultList">
         <h4>{'Data'}</h4>
         {searchResults}
       </ul>

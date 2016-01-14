@@ -44,6 +44,14 @@ body {
       transform: translate3d(-1px, -1px, 0);
     }
   }
+
+  .result-name {
+    display: inline-block;
+    vertical-align: bottom;
+    padding: .25em;
+    color: #fff;
+    background-color: rgba(0,0,0,.6);
+  }
 }
 
 .DisambiguationRowList {
