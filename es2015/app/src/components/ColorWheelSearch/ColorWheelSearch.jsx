@@ -45,16 +45,16 @@ class ColorWheelSearch extends React.Component {
 
 }
 
-// Set default props for ColorWheelSearch
-ColorWheelSearch.defaultProps = {
-  results: colors.get(),
-  categories: colorCategories.get()
-};
-
 // Set prop validation
 ColorWheelSearch.propTypes = {
   results: React.PropTypes.arrayOf(React.PropTypes.object),
   categories: React.PropTypes.arrayOf(React.PropTypes.object)
 }
+
+// Set default props for ColorWheelSearch
+ColorWheelSearch.defaultProps = {
+  results: colors.get(),
+  categories: colorCategories.get()
+};
 
 export default ColorWheelSearch;

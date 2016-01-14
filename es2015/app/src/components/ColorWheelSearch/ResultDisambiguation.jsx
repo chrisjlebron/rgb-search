@@ -1,5 +1,5 @@
 import React from 'react';
-import ResultRow from './ResultRow';
+import DisambiguationRow from './DisambiguationRow';
 
 import {capitalize} from 'lodash';
 
@@ -47,7 +47,7 @@ const ResultDisambiguation = ({results, filterText, categories, onUserClick}) =>
   //     }
   //
   //     return (
-  //       <ResultRow
+  //       <DisambiguationRow
   //         key=`${key}-disambiguation`
   //         row={row}
   //         onUserClick={onUserClick}
@@ -58,7 +58,7 @@ const ResultDisambiguation = ({results, filterText, categories, onUserClick}) =>
   //
   // let disambiguationGroup = [(
   //     // no user input is default
-  //     <ResultRow
+  //     <DisambiguationRow
   //       key={'all'}
   //       row={[{title: 'Available Data', results: results}]}
   //       onUserClick={onUserClick}
