@@ -1,5 +1,5 @@
 import React from 'react';
-import ResultRow from './ResultRow';
+import DisambiguationRow from './DisambiguationRow';
 
 import {sortByAll} from 'lodash';
 
@@ -50,7 +50,7 @@ const ResultList = ({results, filterText, categories, onUserClick}) => {
       }
 
       return (
-        <ResultRow
+        <DisambiguationRow
           key={key}
           row={row}
           onUserClick={onUserClick}
@@ -61,7 +61,7 @@ const ResultList = ({results, filterText, categories, onUserClick}) => {
 
   let listItems = [(
       // no user input is default
-      <ResultRow
+      <DisambiguationRow
         key={'all'}
         row={[{title: 'Available Data', results: results}]}
         onUserClick={onUserClick}
