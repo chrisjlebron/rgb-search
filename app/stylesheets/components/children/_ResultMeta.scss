@@ -1,0 +1,18 @@
+.ResultMeta {
+  margin-bottom: 1em;
+}
+
+.DisambiguationRowList {
+  .ResultGroup {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 1em;
+
+    .ListItem {
+      height: auto;
+      &:hover, &:focus {
+        box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+      }
+    }
+  }
+}

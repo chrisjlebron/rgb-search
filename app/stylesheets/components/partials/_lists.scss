@@ -1,0 +1,31 @@
+.ul-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.inline-list {
+  @extend .ul-reset;
+  .ListItem {
+    display: inline-block;
+    width: 150px;
+    height: 75px;
+    margin-right: 1em;
+    margin-bottom: 1em;
+
+    &:last-child { margin-right: 0; }
+    &:hover, &:focus {
+      cursor: pointer;
+      box-shadow: 1px 3px 10px rgba(0,0,0,.3);
+      transform: translate3d(-1px, -1px, 0);
+    }
+  }
+
+  .result-name {
+    display: inline-block;
+    vertical-align: bottom;
+    padding: .25em;
+    color: #fff;
+    background-color: rgba(0,0,0,.6);
+  }
+}

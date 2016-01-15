@@ -5,6 +5,8 @@ import SearchResults from './SearchResults';
 import colors from '../../fixtures/colors-only';
 import colorCategories from '../../fixtures/color-categories';
 
+import '../../../stylesheets/components/ColorWheelSearch.scss';
+
 class ColorWheelSearch extends React.Component {
 
   constructor() {

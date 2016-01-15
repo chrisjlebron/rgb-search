@@ -18,7 +18,7 @@ const ResultList = ({results, category, onUserClick}) => {
   return (
     <div className="ResultContainer">
       <h4>{resultsTitle}</h4>
-      <ul className="ResultList">{listItems}</ul>
+      <ul className="ResultList inline-list">{listItems}</ul>
     </div>
   );
 }
