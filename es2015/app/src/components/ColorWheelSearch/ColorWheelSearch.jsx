@@ -1,9 +1,11 @@
 import React from 'react';
-import ResultList from './ResultList';
 import SearchBar from './SearchBar';
+import SearchResults from './SearchResults';
 
 import colors from '../../fixtures/colors-only';
 import colorCategories from '../../fixtures/color-categories';
+
+import '../../../stylesheets/components/ColorWheelSearch.scss';
 
 class ColorWheelSearch extends React.Component {
 
@@ -24,23 +26,19 @@ class ColorWheelSearch extends React.Component {
   }
 
   render() {
-
-    const colorResults = colors.get();
-    const categories = colorCategories.get();
-
     return (
       <div>
         <h2>{'Color Wheel Search'}</h2>
         <SearchBar
           filterText={this.state.filterText}
           onUserInput={this.handleUserInput}
-          results={colorResults}
-          categories={categories}
+          results={this.props.results}
+          categories={this.props.categories}
         />
-        <ResultList
-          results={colorResults}
+        <SearchResults
+          results={this.props.results}
           filterText={this.state.filterText}
-          categories={categories}
+          categories={this.props.categories}
           onUserClick={this.handleUserInput}
         />
       </div>
@@ -48,5 +46,17 @@ class ColorWheelSearch extends React.Component {
   }
 
 }
+
+// Set prop validation
+ColorWheelSearch.propTypes = {
+  results: React.PropTypes.arrayOf(React.PropTypes.object),
+  categories: React.PropTypes.arrayOf(React.PropTypes.object)
+}
+
+// Set default props for ColorWheelSearch
+ColorWheelSearch.defaultProps = {
+  results: colors.get(),
+  categories: colorCategories.get()
+};
 
 export default ColorWheelSearch;
