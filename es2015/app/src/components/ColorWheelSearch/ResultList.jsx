@@ -1,6 +1,8 @@
 import React from 'react';
 import ListItem from './ListItem';
 
+import {capitalize} from 'lodash';
+
 const ResultList = ({results, category, onUserClick}) => {
   let listItems = results.map((result) => {
     return (
@@ -11,7 +13,7 @@ const ResultList = ({results, category, onUserClick}) => {
       />
     );
   });
-  let resultsTitle = category ? category.name : 'All';
+  let resultsTitle = category ? `${capitalize(category.name)}s` : 'All';
 
   return (
     <div className="ResultContainer">

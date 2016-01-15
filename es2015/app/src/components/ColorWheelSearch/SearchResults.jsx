@@ -4,12 +4,7 @@ import ResultMeta from './ResultMeta';
 
 import {sortByAll} from 'lodash';
 
-const SearchResults = (props) => {
-  const results = sortByAll(props.results, ['category', 'name']);
-  const categories = props.categories;
-  const filterText = props.filterText;
-  const onUserClick = props.onUserClick;
-
+const SearchResults = ({results, categories, filterText, onUserClick}) => {
   let category,
       disambiguationRow,
       opposite,
@@ -17,8 +12,8 @@ const SearchResults = (props) => {
       oppositeRelated,
       related;
 
-  // set default results
-  let searchResults = results;
+  // set default results & sort by category name, then result name
+  let searchResults = sortByAll(results, ['category', 'name']);
 
   // let matches = results.filter((result) => {
   //   if (result.name.toLowerCase().indexOf(filterText.toLowerCase()) !== -1) {

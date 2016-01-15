@@ -2,7 +2,7 @@ import React from 'react';
 import DisambiguationRow from './DisambiguationRow';
 
 const ResultMeta = ({disambiguationRow, category, onUserClick}) => {
-  let renderRow = () => {
+  let renderDisambiguationRow = () => {
     if (disambiguationRow) {
       return (
         <DisambiguationRow
@@ -12,20 +12,20 @@ const ResultMeta = ({disambiguationRow, category, onUserClick}) => {
       );
     }
 
-    // don't render disambiguation section if no row data
+    // default: don't render disambiguation section if no row data
     return null;
   };
 
   let catTitle;
 
   if (typeof category === 'object') {
-    catTitle = category.name;
+    // catTitle = category.name;
   }
 
   return (
     <div className="ResultMeta">
-      {renderRow()}
-      {catTitle ? `${catTitle}'s` : null}
+      {renderDisambiguationRow()}
+      {catTitle ? catTitle : null}
     </div>
   );
 }
