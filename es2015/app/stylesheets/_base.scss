@@ -24,8 +24,15 @@ body {
   list-style: none;
 }
 
-.ResultDisambiguation {
+.ResultMeta {
   margin-bottom: 1em;
+}
+
+.ResultMeta,
+.ResultContainer {
+  h4 {
+    margin-top: 0;
+  }
 }
 
 .ResultGroup,
@@ -60,10 +67,6 @@ body {
     vertical-align: top;
     margin-right: 1em;
 
-    h4 {
-      margin-top: 0;
-    }
-
     &.disambiguation-group .ListItem {
       height: auto;
       &:hover, &:focus {
@@ -74,7 +77,7 @@ body {
   }
 }
 
-.ResultList {
+.ResultContainer {
   display: block;
   background-color: #fcfcfc;
   border: 1px solid #d0d0d0;
