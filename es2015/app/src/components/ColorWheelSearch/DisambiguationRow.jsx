@@ -16,16 +16,16 @@ const DisambiguationRow = ({row, onUserClick}) => {
     return (
       <li
         key={id}
-        className={`ResultGroup disambiguation-group`}
+        className={`ResultGroup`}
       >
         <h4>{resultGroup.title}</h4>
-        <ul className="group-members-list">{groupMembers}</ul>
+        <ul className="inline-list">{groupMembers}</ul>
       </li>
     );
   });
 
   return (
-    <ul className="DisambiguationRowList">{disambiguationRowList}</ul>
+    <ul className="DisambiguationRowList ul-reset">{disambiguationRowList}</ul>
   );
 };
 
