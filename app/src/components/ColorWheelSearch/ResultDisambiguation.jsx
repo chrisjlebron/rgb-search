@@ -3,7 +3,7 @@ import DisambiguationRow from './DisambiguationRow';
 
 import {capitalize} from 'lodash';
 
-const ResultDisambiguation = ({results, filterText, categories, onUserClick}) => {
+const ResultMeta = ({results, filterText, categories, onUserClick}) => {
   if (!filterText.length) {
     return {
       render() {
@@ -70,8 +70,8 @@ const ResultDisambiguation = ({results, filterText, categories, onUserClick}) =>
   // }
 
   return (
-    <ul className="ResultDisambiguation">{disambiguationGroup}</ul>
+    <ul className="ResultMeta">{disambiguationGroup}</ul>
   );
 }
 
-export default ResultDisambiguation;
+export default ResultMeta;
