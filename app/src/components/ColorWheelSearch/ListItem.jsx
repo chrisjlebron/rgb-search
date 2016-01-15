@@ -5,13 +5,6 @@ const ListItem = ({result, onUserClick}) => {
   let liStyles = {
     backgroundColor: color
   };
-  let spanStyles = {
-    display: 'inline-block',
-    verticalAlign: 'bottom',
-    padding: '.25em',
-    color: '#fff',
-    backgroundColor: 'rgba(0,0,0,.6)',
-  };
 
   return {
     handleClick() {
@@ -25,7 +18,7 @@ const ListItem = ({result, onUserClick}) => {
           style={liStyles}
           onClick={this.handleClick}
         >
-          <span style={spanStyles}>{result.name}</span>
+          <span className="result-name">{result.name}</span>
         </li>
       );
     }
