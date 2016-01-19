@@ -1,0 +1,24 @@
+.article-list {
+  -webkit-column-count: 4;
+  -webkit-column-gap: 1em;
+
+  .Article {
+    display: inline-block;
+    width: 100%;
+    margin: 0 0 1em;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 1px 1px 3px 3px;
+
+    &:hover, &:focus {
+      box-shadow: 1px 1px 1px rgba(0,0,0,.1);
+    }
+  }
+
+  .article-title {
+    width: calc(100% - .5em);
+  }
+
+  .article-img {
+    width: 100%;
+  }
+}

@@ -5,7 +5,10 @@ import Article from './Article';
 import {capitalize} from 'lodash';
 
 const ResultList = ({results, category, onUserClick, view}) => {
-  let listItems;
+  let listItems,
+      containerStyles,
+      resultsTitle = 'All',
+      listClasses = 'ResultList inline-list';
 
   switch (view) {
     case 'colors':
@@ -20,6 +23,7 @@ const ResultList = ({results, category, onUserClick, view}) => {
       });
       break;
     case 'articles':
+      listClasses += ' article-list';
       listItems = results.map((result) => {
         return (
           <Article
@@ -29,17 +33,24 @@ const ResultList = ({results, category, onUserClick, view}) => {
             onArtcileClick={onUserClick}
           />
         );
-      });
+      });``
       break;
     default:
   }
-
-  let resultsTitle = category ? `${capitalize(category.name)}s` : 'All';
+  if (category) {
+    resultsTitle += ` ${capitalize(view)} in ${capitalize(category.name)}`;
+    containerStyles = {
+      boxShadow: `0 0 3px rgba(0,0,0,.15), 0 -6px 0 ${category.colorValue}`
+    };
+  }
 
   return (
-    <div className="ResultContainer">
+    <div
+      className="ResultContainer"
+      style={containerStyles}
+    >
       <h4>{resultsTitle}</h4>
-      <ul className="ResultList inline-list">{listItems}</ul>
+      <ul className={listClasses}>{listItems}</ul>
     </div>
   );
 }

@@ -6,10 +6,10 @@
 
 .inline-list {
   @extend .ul-reset;
-  .ListItem {
+  li {
     display: inline-block;
-    width: 150px;
-    height: 75px;
+    min-width: 150px;
+    min-height: 75px;
     margin-right: 1em;
     margin-bottom: 1em;
 
