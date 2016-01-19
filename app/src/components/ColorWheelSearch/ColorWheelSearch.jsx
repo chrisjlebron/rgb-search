@@ -4,6 +4,7 @@ import SearchResults from './SearchResults';
 
 import colors from '../../fixtures/colors-only';
 import colorCategories from '../../fixtures/color-categories';
+import articles from '../../fixtures/articles';
 
 import '../../../stylesheets/components/ColorWheelSearch.scss';
 
@@ -13,15 +14,23 @@ class ColorWheelSearch extends React.Component {
     super();
 
     this.handleUserInput = this.handleUserInput.bind(this);
+    this.handleToggle = this.handleToggle.bind(this);
 
     this.state = {
-      filterText: ''
+      filterText: '',
+      view: 'colors'
     }
   }
 
   handleUserInput(filterText) {
     this.setState({
       filterText: filterText
+    });
+  }
+
+  handleToggle(view) {
+    this.setState({
+      view: view
     });
   }
 
@@ -32,14 +41,15 @@ class ColorWheelSearch extends React.Component {
         <SearchBar
           filterText={this.state.filterText}
           onUserInput={this.handleUserInput}
-          results={this.props.results}
+          results={this.props.colors}
           categories={this.props.categories}
         />
         <SearchResults
-          results={this.props.results}
+          results={this.state.view === 'colors' ? this.props.colors : this.props.articles}
           filterText={this.state.filterText}
           categories={this.props.categories}
           onUserClick={this.handleUserInput}
+          onViewToggle={this.handleToggle}
         />
       </div>
     );
@@ -49,14 +59,16 @@ class ColorWheelSearch extends React.Component {
 
 // Set prop validation
 ColorWheelSearch.propTypes = {
-  results: React.PropTypes.arrayOf(React.PropTypes.object),
-  categories: React.PropTypes.arrayOf(React.PropTypes.object)
+  colors: React.PropTypes.arrayOf(React.PropTypes.object),
+  categories: React.PropTypes.arrayOf(React.PropTypes.object),
+  articles: React.PropTypes.arrayOf(React.PropTypes.object)
 }
 
 // Set default props for ColorWheelSearch
 ColorWheelSearch.defaultProps = {
-  results: colors.get(),
-  categories: colorCategories.get()
+  colors: colors.get(),
+  categories: colorCategories.get(),
+  articles: articles.get()
 };
 
 export default ColorWheelSearch;
