@@ -1,20 +1,21 @@
 import React from 'react';
 
 const ToggleViewSection = ({category, onViewToggle, view}) => {
-  //
-  // if (view === 'colors') {
-  // }
-
   return {
     handleClick() {
-      onViewToggle(view);
+      onViewToggle(this._toggleButton.value);
+    },
+
+    componentWillReceiveProps(nextProps) {
+      this._toggleButton.value = nextProps.view;
     },
 
     render() {
       return (
         <div className="ToggleViewSection">
           <button
-            onClick={this.handleClick}
+            onClick={this.handleClick.bind(this)}
+            ref={(component) => this._toggleButton = component}
             value={view}
           >
           Toggle View
