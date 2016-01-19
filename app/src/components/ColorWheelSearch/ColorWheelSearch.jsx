@@ -4,7 +4,6 @@ import SearchResults from './SearchResults';
 
 import colors from '../../fixtures/colors-only';
 import colorCategories from '../../fixtures/color-categories';
-import articles from '../../fixtures/articles';
 
 import '../../../stylesheets/components/ColorWheelSearch.scss';
 
@@ -30,7 +29,7 @@ class ColorWheelSearch extends React.Component {
 
   handleToggle(view) {
     this.setState({
-      view: view
+      view: view === 'colors' ? 'articles' : 'colors'
     });
   }
 
@@ -45,11 +44,12 @@ class ColorWheelSearch extends React.Component {
           categories={this.props.categories}
         />
         <SearchResults
-          results={this.state.view === 'colors' ? this.props.colors : this.props.articles}
+          results={this.props.colors}
           filterText={this.state.filterText}
           categories={this.props.categories}
           onUserClick={this.handleUserInput}
           onViewToggle={this.handleToggle}
+          view={this.state.view}
         />
       </div>
     );
@@ -60,15 +60,13 @@ class ColorWheelSearch extends React.Component {
 // Set prop validation
 ColorWheelSearch.propTypes = {
   colors: React.PropTypes.arrayOf(React.PropTypes.object),
-  categories: React.PropTypes.arrayOf(React.PropTypes.object),
-  articles: React.PropTypes.arrayOf(React.PropTypes.object)
+  categories: React.PropTypes.arrayOf(React.PropTypes.object)
 }
 
 // Set default props for ColorWheelSearch
 ColorWheelSearch.defaultProps = {
   colors: colors.get(),
-  categories: colorCategories.get(),
-  articles: articles.get()
+  categories: colorCategories.get()
 };
 
 export default ColorWheelSearch;

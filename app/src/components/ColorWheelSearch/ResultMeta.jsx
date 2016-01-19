@@ -1,7 +1,8 @@
 import React from 'react';
 import DisambiguationRow from './DisambiguationRow';
+import ToggleViewSection from './ToggleViewSection';
 
-const ResultMeta = ({disambiguationRow, category, onUserClick}) => {
+const ResultMeta = ({disambiguationRow, category, onUserClick, onViewToggle, view}) => {
   let renderDisambiguationRow = () => {
     if (disambiguationRow) {
       return (
@@ -16,16 +17,22 @@ const ResultMeta = ({disambiguationRow, category, onUserClick}) => {
     return null;
   };
 
-  let catTitle;
+  let toggleViewSection;
 
   if (typeof category === 'object') {
-    // catTitle = category.name;
+    toggleViewSection = (
+      <ToggleViewSection
+        category={category}
+        onViewToggle={onViewToggle}
+        view={view}
+      />
+    );
   }
 
   return (
     <div className="ResultMeta">
       {renderDisambiguationRow()}
-      {catTitle ? catTitle : null}
+      {toggleViewSection ? toggleViewSection : null}
     </div>
   );
 }

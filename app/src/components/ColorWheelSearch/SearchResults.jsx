@@ -2,9 +2,11 @@ import React from 'react';
 import ResultList from './ResultList';
 import ResultMeta from './ResultMeta';
 
+import articles from '../../fixtures/articles';
+
 import {sortByAll} from 'lodash';
 
-const SearchResults = ({results, categories, filterText, onUserClick}) => {
+const SearchResults = ({results, categories, filterText, onUserClick, onViewToggle, view, articles}) => {
   let category,
       disambiguationRow,
       opposite,
@@ -55,20 +57,37 @@ const SearchResults = ({results, categories, filterText, onUserClick}) => {
     ];
   }
 
+  if (view === 'articles') {
+    searchResults = articles.filter((a) => a.tags.indexOf(category.name) !== -1);
+  }
+
   return (
     <div className="SearchResults">
       <ResultMeta
         disambiguationRow={disambiguationRow}
         category={category}
         onUserClick={onUserClick}
+        onViewToggle={onViewToggle}
+        view={view}
       />
       <ResultList
         results={searchResults}
         category={category}
         onUserClick={onUserClick}
+        view={view}
       />
     </div>
   )
 }
+
+// Set prop validation
+SearchResults.propTypes = {
+  articles: React.PropTypes.arrayOf(React.PropTypes.object)
+}
+
+// Set default props for SearchResults
+SearchResults.defaultProps = {
+  articles: articles.get()
+};
 
 export default SearchResults;
