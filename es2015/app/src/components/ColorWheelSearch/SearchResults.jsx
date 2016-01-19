@@ -33,6 +33,8 @@ const SearchResults = ({results, categories, filterText, onUserClick, onViewTogg
   if (exactMatch.length) {
     // grab category object based on match
     category = categories.filter((cat) => cat.name === exactMatch[0].category)[0];
+    // set color value for category
+    category.colorValue = exactMatch[0].value;
     // filter results based on category, then sort by text match
     searchResults = results
       .filter((result) => result.category === category.name)
