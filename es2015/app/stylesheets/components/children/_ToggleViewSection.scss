@@ -1,0 +1,32 @@
+.ToggleViewSection {
+  margin: 1em 0;
+
+  .toggle-view-button {
+    // reset
+    background: none;
+    border: 0;
+    color: inherit;
+    font: inherit;
+    line-height: normal;
+    overflow: visible;
+    padding: 0;
+    -webkit-user-select: none; /* for button */
+       -moz-user-select: none;
+        -ms-user-select: none;
+
+    // styles
+    background-color: #fff;
+    border-bottom: 1px solid #777;
+    padding: .25em .25em .1em;
+    box-shadow: 0 0 2px rgba(0,0,0,.15);
+
+    &:hover {
+      cursor: pointer;
+      background-color: rgba(0,0,0,.1);
+      // color: #fff;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+}
