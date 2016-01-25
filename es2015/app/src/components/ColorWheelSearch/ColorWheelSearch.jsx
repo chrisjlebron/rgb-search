@@ -13,15 +13,23 @@ class ColorWheelSearch extends React.Component {
     super();
 
     this.handleUserInput = this.handleUserInput.bind(this);
+    this.handleToggle = this.handleToggle.bind(this);
 
     this.state = {
-      filterText: ''
+      filterText: '',
+      view: 'colors'
     }
   }
 
   handleUserInput(filterText) {
     this.setState({
       filterText: filterText
+    });
+  }
+
+  handleToggle(view) {
+    this.setState({
+      view: view === 'colors' ? 'articles' : 'colors'
     });
   }
 
@@ -32,14 +40,16 @@ class ColorWheelSearch extends React.Component {
         <SearchBar
           filterText={this.state.filterText}
           onUserInput={this.handleUserInput}
-          results={this.props.results}
+          results={this.props.colors}
           categories={this.props.categories}
         />
         <SearchResults
-          results={this.props.results}
+          results={this.props.colors}
           filterText={this.state.filterText}
           categories={this.props.categories}
           onUserClick={this.handleUserInput}
+          onViewToggle={this.handleToggle}
+          view={this.state.view}
         />
       </div>
     );
@@ -49,13 +59,13 @@ class ColorWheelSearch extends React.Component {
 
 // Set prop validation
 ColorWheelSearch.propTypes = {
-  results: React.PropTypes.arrayOf(React.PropTypes.object),
+  colors: React.PropTypes.arrayOf(React.PropTypes.object),
   categories: React.PropTypes.arrayOf(React.PropTypes.object)
 }
 
 // Set default props for ColorWheelSearch
 ColorWheelSearch.defaultProps = {
-  results: colors.get(),
+  colors: colors.get(),
   categories: colorCategories.get()
 };
 
