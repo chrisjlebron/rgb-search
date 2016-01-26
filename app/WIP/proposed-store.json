@@ -1,0 +1,259 @@
+{
+  "notes on the below": [
+    "if user has seen & answered a Q, it gets added to prefs",
+    "if user has seen & skipped a Q, it's marked as 'null' in prefs",
+    "if user hasn't seen question, user object doesn't know about it",
+    "we're tracking options seen on questions seen so we can present again later with new options",
+    "i'm making a distinction btwn 'meh' and a skipped question: null preference vs. no preference",
+    "I think we can simplify...",
+    "grab question info from foreign_id=>question",
+    "for proto, forget about options_seen"
+  ]
+}
+
+{
+  "users": [
+    {
+      "id": 0,
+      "name": "user1",
+      "questions_seen": [
+        {
+          "foreign_id": 0,
+          "status": "presented",
+          "options_seen": [
+            0,
+            2
+          ],
+          "foreign_response_id": null
+        },
+        {
+          "foreign_id": 2,
+          "status": "completed",
+          "options_seen": [
+            0,
+            1
+          ],
+          "foreign_response_id": 1
+        }
+      ],
+      "preferences": {
+        "size": null,
+        "greek life": "i'm cool with it"
+      }
+    }
+  ],
+  "questions": [
+    {
+      "id": 0,
+      "preference": "size",
+      "text": "what size school would you prefer",
+      "options": [
+        {
+          "id": 0,
+          "text": "big",
+        },
+        {
+          "id": 1,
+          "text": "small",
+        },
+        {
+          "id": 2,
+          "text": "neither big nor small",
+        },
+        {
+          "id": 3,
+          "text": "meh... whatevs.",
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "preference": "social life",
+      "text": "how important is having a social life",
+      "options": [
+        {
+          "id": 0,
+          "text": "Nope. I'm here to study",
+        },
+        {
+          "id": 1,
+          "text": "Board games & my fam; that's all I need",
+        },
+        {
+          "id": 2,
+          "text": "When the uppers get too strong, I switch to downers",
+        },
+        {
+          "id": 3,
+          "text": "Meh... whatevs.",
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "preference": "greek life",
+      "text": "How important is greek life",
+      "options": [
+        {
+          "id": 0,
+          "text": "Meh... whatevs.",
+        },
+        {
+          "id": 1,
+          "text": "No. Fucking. Way.",
+        },
+        {
+          "id": 2,
+          "text": "I'm cool with it",
+        },
+        {
+          "id": 3,
+          "text": "Greek life, all the way. OBVI!",
+        },
+      ]
+    },
+    {
+      "id": 3,
+      "preference": "tuition_cost",
+      "text": "about how much are you hoping to pay for tuition?",
+
+    }
+  ],
+  "profiles": [
+    {
+      "id": 0,
+      "title": "NYU",
+      "size": 22615,
+      "setting": "urban",
+      "gpa_cutoff": 3.0,
+      "region": "mid-atlantic",
+      "tuition_cost": 42472
+    },
+    {
+      "id": 1,
+      "title": "CUNY Hunter College",
+      "size": 16689,
+      "setting": "urban",
+      "gpa_cutoff": 2.0,
+      "region": "mid-atlantic",
+      "tuition_cost": 5730
+    },
+    {
+      "id": 2,
+      "title": "Quinnipiac University",
+      "size": 6542,
+      "setting": "suburban",
+      "gpa_cutoff": 3.0,
+      "region": "north",
+      "tuition_cost": 37830
+    },
+    {
+      "id": 3,
+      "title": "University of Miami",
+      "size": 11380,
+      "setting": "suburban",
+      "gpa_cutoff": 2.5,
+      "region": "southeast",
+      "tuition_cost": 41580
+    },
+    {
+      "id": 4,
+      "title": "University of Texas at Austin",
+      "size": 39979,
+      "setting": "suburban",
+      "gpa_cutoff": 2.8,
+      "region": "southwest",
+      "tuition_cost": 9798
+    },
+    {
+      "id": 5,
+      "title": "University of North Carolina at Chapel Hill",
+      "size": 18370,
+      "setting": "suburban",
+      "gpa_cutoff": 3.2,
+      "region": "southeast",
+      "tuition_cost": 6423
+    },
+    {
+      "id": 6,
+      "title": "Stanford University",
+      "size": 7274,
+      "setting": "suburban",
+      "gpa_cutoff": 3.7,
+      "region": "west coast",
+      "tuition_cost": 42690
+    },
+    {
+      "id": 7,
+      "title": "University of Michigan - Ann Arbor",
+      "size": 28283,
+      "setting": "suburban",
+      "gpa_cutoff": 2.7,
+      "region": "midwest",
+      "tuition_cost": 12948
+    },
+    {
+      "id": 8,
+      "title": "University of Wisconsin - Madison",
+      "size": 30728,
+      "setting": "urban",
+      "gpa_cutoff": 2.2,
+      "region": "midwest",
+      "tuition_cost": 9273
+    },
+    {
+      "id": 9,
+      "title": "University of Iowa",
+      "size": 21974,
+      "setting": "rural",
+      "gpa_cutoff": 2.0,
+      "region": "plains",
+      "tuition_cost": 6678
+    },
+    {
+      "id": 10,
+      "title": "University of Nebraska - Omaha",
+      "size": 12335,
+      "setting": "rural",
+      "gpa_cutoff": 2.0,
+      "region": "plains",
+      "tuition_cost": 5180
+    },
+    {
+      "id": 11,
+      "title": "Indiana University - Bloomington",
+      "size": 36962,
+      "setting": "rural",
+      "gpa_cutoff": 2.0,
+      "region": "midwest",
+      "tuition_cost": 8919
+    },
+    {
+      "id": 12,
+      "title": "University of California - Berkeley",
+      "size": 25951,
+      "setting": "urban",
+      "gpa_cutoff": 3.5,
+      "region": "west coast",
+      "tuition_cost": 11220
+    },
+    {
+      "id": 13,
+      "title": "University of California - San Diego",
+      "size": 23805,
+      "setting": "urban",
+      "gpa_cutoff": 3.2,
+      "region": "west coast",
+      "tuition_cost": 11220
+    },
+    {
+      "id": 14,
+      "title": "Lincoln College of New England",
+      "size": 8054,
+      "setting": "rural",
+      "gpa_cutoff": 2.2,
+      "region": "north",
+      "tuition_cost": 18500
+    }
+  ]
+}

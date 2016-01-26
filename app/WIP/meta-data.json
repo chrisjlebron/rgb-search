@@ -1,0 +1,77 @@
+{
+  "titles": [
+    "CUNY Hunter College",
+    "Indiana University - Bloomington",
+    "Lincoln College of New England",
+    "NYU",
+    "Quinnipiac University",
+    "Stanford University",
+    "University of California - Berkeley",
+    "University of California - San Diego",
+    "University of Iowa",
+    "University of Miami",
+    "University of Michigan - Ann Arbor",
+    "University of Nebraska - Omaha",
+    "University of North Carolina at Chapel Hill",
+    "University of Texas at Austin",
+    "University of Wisconsin - Madison"
+  ],
+  "sizes": [
+    6542,
+    7274,
+    8054,
+    11380,
+    12335,
+    16689,
+    18370,
+    21974,
+    22615,
+    23805,
+    25951,
+    28283,
+    30728,
+    36962,
+    39979
+  ],
+  "settings": [
+    "rural",
+    "suburban",
+    "urban"
+  ],
+  "gpa_cutoffs": [
+    2,
+    2.2,
+    2.5,
+    2.7,
+    2.8,
+    3,
+    3.2,
+    3.5,
+    3.7
+  ],
+  "regions": [
+    "mid-atlantic",
+    "midwest",
+    "north",
+    "plains",
+    "southeast",
+    "southwest",
+    "west coast"
+  ],
+  "tuition_costs": [
+    5180,
+    5730,
+    6423,
+    6678,
+    8919,
+    9273,
+    9798,
+    11220,
+    12948,
+    18500,
+    37830,
+    41580,
+    42472,
+    42690
+  ]
+}
