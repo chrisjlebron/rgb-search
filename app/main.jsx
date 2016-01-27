@@ -6,6 +6,7 @@ import App from './src/components/App';
 import Home from './src/components/Home';
 import FilterableSearch from './src/components/FilterableSearch/FilterableSearch';
 import ColorWheelSearch from './src/components/ColorWheelSearch/ColorWheelSearch';
+import ChatSearch from './src/components/ChatSearch/ChatSearch';
 
 
 function renderShell() {
@@ -18,6 +19,7 @@ function renderShell() {
           <IndexRoute component={Home} />
           <Route path='filterable-search' component={FilterableSearch} />
           <Route path='color-wheel-search' component={ColorWheelSearch} />
+          <Route path='chat-search' component={ChatSearch} />
         </Route>
       </Router>
     ), shell);

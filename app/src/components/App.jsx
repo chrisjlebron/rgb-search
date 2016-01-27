@@ -19,6 +19,9 @@ class App extends React.Component {
           <li className={pathname === '/color-wheel-search' ? 'active' : ''}>
             <Link to={'/color-wheel-search'}>{'Color Wheel Search'}</Link>
           </li>
+          <li className={pathname === '/chat-search' ? 'active' : ''}>
+            <Link to={'/chat-search'}>{'Chat Search'}</Link>
+          </li>
         </ul>
         {this.props.children}
       </div>

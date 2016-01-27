@@ -1,0 +1,26 @@
+.ChatSearch {
+
+  .Question {
+    display: flex;
+    .question-flex-child { flex-grow: 1; }
+
+    .terms-input {
+      // Display
+      padding: .5em;
+      font-size: 2em;
+
+      // Reset
+      background-color: transparent;
+      border: none;
+      border-bottom: 2px solid #ccc;
+      outline: none;
+      font-family: inherit;
+
+      &:focus {
+        border-bottom-color: #aaa;
+      }
+    }
+  }
+}
+
+.is-hidden { display: none; }

@@ -122,6 +122,7 @@
   "profiles": [
     {
       "id": 0,
+      "type": "colleges",
       "title": "NYU",
       "size": 22615,
       "setting": "urban",
@@ -131,6 +132,7 @@
     },
     {
       "id": 1,
+      "type": "colleges",
       "title": "CUNY Hunter College",
       "size": 16689,
       "setting": "urban",
@@ -140,6 +142,7 @@
     },
     {
       "id": 2,
+      "type": "colleges",
       "title": "Quinnipiac University",
       "size": 6542,
       "setting": "suburban",
@@ -149,6 +152,7 @@
     },
     {
       "id": 3,
+      "type": "colleges",
       "title": "University of Miami",
       "size": 11380,
       "setting": "suburban",
@@ -158,6 +162,7 @@
     },
     {
       "id": 4,
+      "type": "colleges",
       "title": "University of Texas at Austin",
       "size": 39979,
       "setting": "suburban",
@@ -167,6 +172,7 @@
     },
     {
       "id": 5,
+      "type": "colleges",
       "title": "University of North Carolina at Chapel Hill",
       "size": 18370,
       "setting": "suburban",
@@ -176,6 +182,7 @@
     },
     {
       "id": 6,
+      "type": "colleges",
       "title": "Stanford University",
       "size": 7274,
       "setting": "suburban",
@@ -185,6 +192,7 @@
     },
     {
       "id": 7,
+      "type": "colleges",
       "title": "University of Michigan - Ann Arbor",
       "size": 28283,
       "setting": "suburban",
@@ -194,6 +202,7 @@
     },
     {
       "id": 8,
+      "type": "colleges",
       "title": "University of Wisconsin - Madison",
       "size": 30728,
       "setting": "urban",
@@ -203,6 +212,7 @@
     },
     {
       "id": 9,
+      "type": "colleges",
       "title": "University of Iowa",
       "size": 21974,
       "setting": "rural",
@@ -212,6 +222,7 @@
     },
     {
       "id": 10,
+      "type": "colleges",
       "title": "University of Nebraska - Omaha",
       "size": 12335,
       "setting": "rural",
@@ -221,6 +232,7 @@
     },
     {
       "id": 11,
+      "type": "colleges",
       "title": "Indiana University - Bloomington",
       "size": 36962,
       "setting": "rural",
@@ -230,6 +242,7 @@
     },
     {
       "id": 12,
+      "type": "colleges",
       "title": "University of California - Berkeley",
       "size": 25951,
       "setting": "urban",
@@ -239,6 +252,7 @@
     },
     {
       "id": 13,
+      "type": "colleges",
       "title": "University of California - San Diego",
       "size": 23805,
       "setting": "urban",
@@ -248,6 +262,7 @@
     },
     {
       "id": 14,
+      "type": "colleges",
       "title": "Lincoln College of New England",
       "size": 8054,
       "setting": "rural",
