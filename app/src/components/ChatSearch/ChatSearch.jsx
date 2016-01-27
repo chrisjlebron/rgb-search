@@ -45,6 +45,7 @@ class ChatSearch extends React.Component {
         />
         <SearchResults
           results={this.props.profiles}
+          resultType={this.state.resultType}
         />
       </div>
     );

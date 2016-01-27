@@ -9,10 +9,14 @@ const Question = ({onTermsInput, onTermsSubmit, results}) => {
     handleSubmit(event) {
       if (event.key.toLowerCase() === 'enter') {
         let inputTextArray = event.target.value.split(' ');
-        let profiles = results.filter((result) => {
+        let resultType = results.filter((result) => {
           return inputTextArray.indexOf(result.type) !== -1;
-        });
-        onTermsSubmit(event.target.value);
+        }).reduce((type, result) => {
+          let profileType = type;
+          if (!profileType) profileType = result.type;
+          return profileType;
+        }, '');
+        onTermsSubmit(resultType.length ? resultType : '');
       }
     },
 
