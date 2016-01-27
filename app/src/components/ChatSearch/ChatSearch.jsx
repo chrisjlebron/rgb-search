@@ -1,6 +1,6 @@
 import React from 'react';
 import Question from './Question';
-// import SearchResults from './SearchResults';
+import SearchResults from './SearchResults';
 
 import profiles from '../../fixtures/profiles';
 
@@ -41,6 +41,9 @@ class ChatSearch extends React.Component {
           resultType={this.state.resultType}
           onTermsInput={this.handleTermsInput}
           onTermsSubmit={this.handleTermsSubmit}
+          results={this.props.profiles}
+        />
+        <SearchResults
           results={this.props.profiles}
         />
       </div>
