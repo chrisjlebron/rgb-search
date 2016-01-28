@@ -8,7 +8,7 @@ class App extends React.Component {
 
     return (
       <div className="App">
-        <h1>{'RGB Search Prototypes'}</h1>
+        <h1>{'Search Prototypes'}</h1>
         <ul className="nav">
           <li className={pathname === '/' ? 'active' : ''}>
             <IndexLink to={'/'}>{'Home'}</IndexLink>
