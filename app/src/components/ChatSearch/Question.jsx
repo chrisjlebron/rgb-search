@@ -7,22 +7,27 @@ const Question = ({onTermsInput, onTermsSubmit, results}) => {
     },
 
     handleSubmit(event) {
-      if (event.key.toLowerCase() === 'enter') {
-        let inputTextArray = event.target.value.split(' ');
+      let inputValue = event.target.value;
+
+      if (
+        event.key.toLowerCase() === 'enter' ||
+        event.key.toLowerCase() === 'backspace' && !inputValue
+      ) {
+        let inputTextArray = inputValue.split(' ');
+
         let resultType = results.filter((result) => {
           return inputTextArray.indexOf(result.type) !== -1;
         }).reduce((type, result) => {
-          let profileType = type;
-          if (!profileType) profileType = result.type;
-          return profileType;
+          return type ? type : result.type;
         }, '');
+
         onTermsSubmit(resultType.length ? resultType : '');
       }
     },
 
     render() {
-      let helperClasses = 'question-flex-child help-text';
-      helperClasses += this.props.termsText ? ' is-displayed' : ' is-hidden';
+      let helperClasses = `question-flex-child help-text
+        ${this.props.termsText ? ' is-displayed' : ' is-hidden'}`;
 
       return (
         <div className="Question">
@@ -32,7 +37,7 @@ const Question = ({onTermsInput, onTermsSubmit, results}) => {
             placeholder="What are you looking for today?"
             value={this.props.termsText}
             onChange={this.handleChange}
-            onKeyDown={this.handleSubmit}
+            onKeyUp={this.handleSubmit}
           />
         <span className={helperClasses}>{'Hit Enter to submit'}</span>
         </div>
