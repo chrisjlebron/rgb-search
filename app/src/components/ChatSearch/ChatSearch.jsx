@@ -16,7 +16,8 @@ class ChatSearch extends React.Component {
 
     this.state = {
       termsText: '',
-      resultType: ''
+      resultType: '',
+      preferences: {}
     }
   }
 
@@ -26,10 +27,8 @@ class ChatSearch extends React.Component {
     });
   }
 
-  handleTermsSubmit(resultType) {
-    this.setState({
-      resultType: resultType
-    });
+  handleTermsSubmit(state) {
+    this.setState(state);
   }
 
   render() {
@@ -39,13 +38,16 @@ class ChatSearch extends React.Component {
         <Question
           termsText={this.state.termsText}
           resultType={this.state.resultType}
+          preferences={this.state.preferences}
           onTermsInput={this.handleTermsInput}
           onTermsSubmit={this.handleTermsSubmit}
           results={this.props.profiles}
         />
         <SearchResults
+          termsText={this.state.termsText}
           results={this.props.profiles}
           resultType={this.state.resultType}
+          preferences={this.state.preferences}
         />
       </div>
     );

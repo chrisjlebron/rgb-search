@@ -16,12 +16,26 @@ const Question = ({onTermsInput, onTermsSubmit, results}) => {
         let inputTextArray = inputValue.split(' ');
 
         let resultType = results.filter((result) => {
-          return inputTextArray.indexOf(result.type) !== -1;
+          return inputTextArray.indexOf(result.type) !== -1 ||
+            inputValue.length &&
+              inputValue.toLowerCase() === result.title.toLowerCase();
         }).reduce((type, result) => {
           return type ? type : result.type;
         }, '');
 
-        onTermsSubmit(resultType.length ? resultType : '');
+        let getSize = () => {
+          if (inputValue.indexOf('big') !== -1) {
+            return 'big';
+          } else if (inputValue.indexOf('small') !== -1)
+          return 'small';
+        };
+
+        onTermsSubmit({
+          resultType: resultType.length ? resultType : '',
+          preferences: {
+            size: getSize()
+          }
+        });
       }
     },
 
