@@ -1,7 +1,11 @@
 {
-  "name": "react-example-2015",
-  "version": "1.0.0",
-  "description": "This is a short performance demo I am making to benchmark how React is performing against in the Devtools profiles.",
+  "name": "ndl-search-prototypes",
+  "version": "0.2.1",
+  "engines": {
+    "node": ">=5.0.0",
+    "npm": ">=3.3.6"
+  },
+  "description": "Search interface prototypes for Noodle",
   "main": "webpack.config.js",
   "devDependencies": {
     "babel-core": "^5.6.17",
@@ -31,12 +35,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Ositoozy/react-example-es2015.git"
+    "url": "git+https://github.com/chrisjlebron/ndl-search-prototypes"
   },
-  "author": "Oscar Lodriguez",
+  "author": "Chris J. Lebron",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Ositoozy/react-example-es2015.git/issues"
+    "url": "https://github.com/chrisjlebron/ndl-search-prototypes/issues"
   },
-  "homepage": "https://github.com/Ositoozy/react-example-es2015.git#readme"
+  "homepage": "https://github.com/chrisjlebron/ndl-search-prototypes#readme"
 }
