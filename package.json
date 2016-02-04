@@ -1,6 +1,10 @@
 {
-  "name": "react-example-2015",
-  "version": "1.0.0",
+  "name": "ndl-search-prototypes",
+  "version": "0.2.1",
+  "engines": {
+    "node": ">=5.0.0",
+    "npm": ">=3.3.6"
+  },
   "description": "This is a short performance demo I am making to benchmark how React is performing against in the Devtools profiles.",
   "main": "webpack.config.js",
   "devDependencies": {
