@@ -1,5 +1,17 @@
 import React from 'react';
 
+// checkResults(results) {
+//   case (resultType === result.type && values(prefs).length):
+//     return matchingResults(prefs, results) && moreQuestions();
+//     break;
+//   case (resultType === result.type):
+//     return moreQuestions();
+//     break;
+//   default:
+//     return null;
+//     break;
+// }
+
 const Question = ({onTermsInput, onTermsSubmit, results}) => {
   return {
     handleChange(event) {

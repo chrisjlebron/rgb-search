@@ -30,29 +30,26 @@ export default {
       },
       {
         "id": 1,
-        "preference": "social life",
-        "text": "how important is having a social life",
-        "options": [
-          {
-            "id": 0,
-            "text": "whatevs",
-          },
-          {
-            "id": 1,
-            "text": "Nope. I'm here to study",
-          },
-          {
-            "id": 2,
-            "text": "Board games & my fam; that's all I need",
-          },
-          {
-            "id": 3,
-            "text": "When the uppers get too strong, I switch to downers",
-          },
-        ]
+        "preference": "setting",
+        "text": "in which setting are you looking to study"
       },
       {
         "id": 2,
+        "preference": "gpa_cutoff",
+        "text": "what's your GPA"
+      },
+      {
+        "id": 3,
+        "preference": "region",
+        "text": "in which region are you looking to study"
+      },
+      {
+        "id": 4,
+        "preference": "tuition_cost",
+        "text": "about how much are you hoping to pay for tuition"
+      },
+      {
+        "id": 5,
         "preference": "greek life",
         "text": "How important is greek life",
         "options": [
@@ -71,28 +68,31 @@ export default {
           {
             "id": 3,
             "text": "Greek life, all the way. OBVI!",
-          },
+          }
         ]
       },
       {
-        "id": 3,
-        "preference": "tuition_cost",
-        "text": "about how much are you hoping to pay for tuition"
-      },
-      {
-        "id": 4,
-        "preference": "setting",
-        "text": "in which setting are you looking to study"
-      },
-      {
-        "id": 5,
-        "preference": "region",
-        "text": "in which region are you looking to study"
-      },
-      {
         "id": 6,
-        "preference": "gpa_cutoff",
-        "text": "what's your GPA"
+        "preference": "social life",
+        "text": "how important is having a social life",
+        "options": [
+          {
+            "id": 0,
+            "text": "whatevs",
+          },
+          {
+            "id": 1,
+            "text": "Nope. I'm here to study",
+          },
+          {
+            "id": 2,
+            "text": "Board games & my fam; that's all I need",
+          },
+          {
+            "id": 3,
+            "text": "When the uppers get too strong, I switch to downers",
+          }
+        ]
       }
     ]
   }

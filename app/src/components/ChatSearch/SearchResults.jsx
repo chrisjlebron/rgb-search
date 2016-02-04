@@ -12,17 +12,7 @@ class SearchResults extends React.Component {
   //
   // if exact match, grab type from result...
 
-  // checkResults(results) {
-  //   case (resultType === result.type && values(prefs).length):
-  //     return matchingResults(prefs, results) && moreQuestions();
-  //     break;
-  //   case (resultType === result.type):
-  //     return moreQuestions();
-  //     break;
-  //   default:
-  //     return null;
-  //     break;
-  // }
+  
 
   // matchingResults(prefs, results) {
   //   let returnedResults = [];
